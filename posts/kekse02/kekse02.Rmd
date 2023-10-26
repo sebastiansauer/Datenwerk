@@ -86,7 +86,7 @@ library(tidyverse)
 ```
 
 
-```{r}
+```{r echo=TRUE}
 d <-
   tibble(
     # definiere die Hypothesen (das "Gitter"): 
