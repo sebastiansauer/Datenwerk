@@ -1,11 +1,4 @@
-base
-methods
 colorout
-datasets
-utils
-grDevices
-graphics
-stats
 tidyverse
 ggplot2
 tibble
@@ -28,3 +21,4 @@ modelbased
 correlation
 see
 report
+lubridate

@@ -1,11 +1,4 @@
-base
-methods
 colorout
-datasets
-utils
-grDevices
-graphics
-stats
 easystats
 bayestestR
 correlation

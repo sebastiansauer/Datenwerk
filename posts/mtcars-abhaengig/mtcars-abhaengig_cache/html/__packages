@@ -13,3 +13,7 @@ Matrix
 ggformula
 mosaicData
 mosaic
+lubridate
+ggstance
+scales
+ggridges
