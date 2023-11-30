@@ -1,0 +1,232 @@
+---
+extype: string
+exsolution: NA
+exname: mtcars-stan01
+expoints: 1
+categories:
+- bayes
+- regression
+- string
+title: mtcars-stan01
+
+---
+
+
+
+
+
+# Aufgabe
+
+
+Wir untersuchen Einflussfaktoren bzw. Prädiktoren auf den Spritverbrauch von Autos
+In dieser Aufgabe untersuchen wir in dem Zusammenhang den Zusammenhang von *PS-Zahl* (als UV) und Spritverbrauch (als AV).
+
+
+*Wie groß ist der statistische Einfluss der UV auf die AV?*
+
+a) Berechnen Sie den *Punktschätzer* des Effekts!
+b) *Wie viele Parameter* hat das Modell?
+c) Geben Sie die *Breite eines 90%-HDI* an (zum Effekt)!
+d) Wie groß ist die Wahrscheinlichkeit, dass der Effekt (der UV auf die AV) positiv ist (also größer als Null ist), die "*Effektwahrscheinlichkeit*"?
+e) Wie groß ist das 95%-HDI, wenn Sie *nur `am == 0` untersuchen?
+f) Geben Sie die *Prioris* an für `m1` für die Regressionskoeffizienten!
+
+
+Hinweise:
+
+- Nutzen Sie den Datensatz zu den *mtcars*.
+- Verwenden Sie Methoden der Bayes-Statistik und die Software Stan.
+- Fixieren Sie die Zufallszahlen auf den Startwert 42!
+- Der Datensatz ist fest in R eingebaut
+- Geben Sie keine Prozentzahlen, sondern stets Anteile an.
+- Beachten Sie die [übrigen Hinweise](https://datenwerk.netlify.app/hinweise).
+
+
+
+
+
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+
+# Lösung
+
+Zentrieren ist eigentlich immer nützlich,
+aber hier streng genommen nicht unbedingt nötig.
+Der Hauptgrund ist, dass Stan für uns den Prior für den Intercept festlegt,
+und zwar auf Basis der Daten,
+wir uns also nicht um die komische Frage zu kümmern brauchen,
+welchen Prior wir für den unzentrierten Achsenabschnitt vergeben wollten:
+Wie schwer sind Pinguins der Schnabellänge Null?
+Mit zentrierten Prädiktoren ist die Frage nach dem Prior viel einfacher zu beantworten:
+Wie schwer ist ein Pinguin mit mittelgroßem Schnabel?
+
+Setup:
+
+```{r message=FALSE}
+library(tidyverse)
+library(easystats)
+library(rstanarm)
+
+data("mtcars")
+```
+
+
+Es wird in dieser Aufgabe vorausgesetzt,
+dass Sie den Datensatz selbständig importieren können.
+
+
+
+
+Ein Blick in die Daten zur Kontrolle,
+ob das Importieren richtig funktioniert hat:
+
+```{r}
+glimpse(mtcars)
+```
+
+
+Vertrauen ist gut, aber - was Golems betrifft - ist Kontrolle eindeutig besser ;-)
+
+
+
+
+a) Punktschätzer
+
+
+```{r}
+m1 <- stan_glm(mpg ~  hp,  # Regressionsgleichung
+               data = mtcars, #  Daten
+               seed = 42,  # Reproduzierbarkeit
+               refresh = 0)  # nicht so viel Output
+```
+
+
+```{r}
+parameters(m1, ci_method = "hdi", ci = .9)
+```
+
+
+b) Anzahl Parameter
+
+Das Modell hat 3 Parameter:
+
+- $\beta_0$ (oder $\alpha$)
+- $\beta_01$
+- $\sigma$
+
+
+c) Breite des Intervalls
+
+Dazu liest man die Intervallgrenzen (`90% CI`) in der richtigen Zeile ab (Tabelle `parameters`):
+
+```{r}
+-0.08 - -0.05
+```
+
+
+
+
+d) Effektwahrscheinlichkeit
+
+
+
+```{r}
+m1_post <-
+  m1 %>% 
+  as_tibble()
+
+m1_post %>% 
+  count(hp > 0)
+```
+
+Also: 0% oder  (0 von 4000 Stichproben finden dieses Ergebnis in unserem Modell). 
+
+Man kann diesen Wert aus der Tabelle oben (Ausgabe von `parameters()`) einfach in der Spalte `pd` ablesen.
+`pd` steht für *probability of direction*, s. [Details hier](https://easystats.github.io/blog/posts/bayestestr_pd/).
+
+
+Oder so, ist auch einfach:
+
+
+```{r}
+pd_m1 <- p_direction(m1) # aus Paket easystats
+pd_m1
+```
+
+Achtung: Hier wird die Wahrsheinlichkeit für einen *negativen* Effekt angegeben, aber in der Aufgabenstellung wird nach einen *positiven* Effekt gefragt.
+
+Und plotten ist meist hilfreich: `plot(pd_m1)`.
+
+Man kann sich auch ein "Dashboard" mit allen Ergebnissen des Modells ausgeben lassen:
+
+```{r eval=FALSE}
+model_dashboard(m1)
+```
+
+
+
+e) Nur `am==0`:
+
+Welche Spezies gibt es im Datensatz?
+
+```{r}
+mtcars_am_only <-
+  mtcars |> 
+  filter(am == 0)
+```
+
+
+
+
+Modell berechnen:
+
+```{r}
+m2 <- stan_glm(mpg ~  hp,  # Regressionsgleichung
+               data = mtcars_am_only, #  Daten
+               seed = 42,  # Repro.
+               refresh = 0)  # nicht so viel Output
+```
+
+Das Modell ist - bis auf die Daten - identisch zu `m1`.
+
+```{r}
+parameters(m2)
+```
+
+
+```{r}
+hdi(m2)
+```
+
+S. auch Tabelle oben.
+
+Dann wieder die Differenz bilden.
+
+
+f) Prioris
+
+```{r}
+describe_prior(m1, component = "auxiliary")
+```
+
+Steht auch in der Tabelle,
+die von `parameters` ausgegeben wird.
+
+
+
+---
+
+Categories: 
+
+- bayes
+- regression
+- string
+
