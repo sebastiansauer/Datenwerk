@@ -1,4 +1,3 @@
-colorout
 tidyverse
 ggplot2
 tibble
@@ -8,5 +7,5 @@ purrr
 dplyr
 stringr
 forcats
-gt
 lubridate
+gt
