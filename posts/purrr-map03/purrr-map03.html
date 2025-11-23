@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.31">
+<meta name="generator" content="quarto-1.7.32">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -72,10 +72,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-36228135ecc5ef07794e934de038b4b3.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-b985dc545f03a853cc00dfbebf9617fd.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -200,14 +200,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="solution" class="level1">
 <h1>Solution</h1>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(here)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Text aus PDF-Dateien kann man mit dem Paket <a href="https://docs.ropensci.org/pdftools/"><code>pdftools</code></a> einlesen:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(pdftools)</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>d_path <span class="ot">&lt;-</span> <span class="st">"~/Literatur/_Div/Politik/afd-grundsatzprogramm-2022.pdf"</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>d <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">text =</span> <span class="fu">pdf_text</span>(d_path))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>d_path <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="fu">here</span>(), <span class="st">"/data/afd-grundsatzprogramm-2022.pdf"</span>)</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>d <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">text =</span> <span class="fu">pdf_text</span>(d_path))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Dann erstellen wir eine Tidy-Version und tokenisieren nach Sätzen:</p>
 <div class="cell">
@@ -236,10 +238,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td style="text-align: left;">das grundsatzprogramm der alternative für deutschland.</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">2 programm für deutschland | inhalt präambel 06 4 | außen- und sicherheitspolitik 28 1 | demokratie und grundwerte 07 4.1 vereinte nationen reformieren 30 4.2 nato als verteidigungsbündnis 30 1.1 volksabstimmungen nach schweizer vorbild 09 4.3 osze und europäische sicherheitsstruktur 31 1.2 schlanker staat für freie bürger 09 4.4 bundeswehr stärken 31 1.3 die gewaltenteilung gewährleisten 10 4.4.1 keine europäische armee 31 1.4 trennung von amt und mandat 10 4.4.2 wehrpflicht wieder einsetzen 32 1.5 macht der parteien beschränken 11 4.5 entwicklungshilfe 32 1.5.1 parteienfinanzierung dem verfassungsrecht anpassen 11 1.5.2 freie listenwahl und freies mandat 12 5 | arbeitsmarkt und sozialpolitik 34 1.5.3 verkleinerung des bundestages 13 1.5.4 wider das berufspolitikertum: amtszeit begrenzen 13 5.1 arbeitsmarkt von unnötiger bürokratie befreien 36 1.5.5 direktwahl des bundespräsidenten durch das volk 13 5.2 bundesagentur für arbeit auflösen und kommunale 1.6 lobbyismus eindämmen 13 jobcenter aufwerten 36 1.6.1 private rentenvorsorge für parlamentarier 14 5.3 mindestlohn beibehalten 36 1.6.2 einführung eines straftatbestandes der 5.4 reform der sozialen sicherungssysteme 36 steuerverschwendung 14 5.4.1 finanzielle benachteiligung von familien beseitigen 37 5.4.2 “aktivierende grundsicherung” - arbeit, die sich lohnt 37 2 | europa und euro 15 5.4.3 kinder und erziehungsleistung bei der rente berücksichtigen 37 2.1 ein europa der vaterländer 17 5.4.4 pflege durch angehörige aufwerten 37 2.2 kompetenzen an die nationalstaaten zurückgeben 17 2.3 bündelung gemeinsamer europäischer interessen 18 6 | familien und kinder 39 2.4 volksabstimmung über den euro 18 2.5 keine deutsche haftung für ausländische banken 21 6.1 bekenntnis zur traditionellen familie als leitbild 41 6.2 mehr kinder statt masseneinwanderung 41 3 | innere sicherheit und justiz 23 6.3 mehr unterstützung für familien 42 6.4 wirtschaftliche zukunft trotz demografiekrise 42 3.1 polizei stärken und strafjustiz verbessern 25 6.5 diskriminierung der vollzeit-mütter stoppen 43 3.2 weisungsfreie staatsanwälte, unabhängige richter 6.6 alleinerziehende unterstützen.</td>
+<td style="text-align: left;">2 programm für deutschland | inhalt präambel 06 4 | außen- und sicherheitspolitik 28 1 | demokratie und grundwerte 07 4.1 vereinte nationen reformieren 30 4.2 nato als verteidigungsbündnis 30 1.1 volksabstimmungen nach schweizer vorbild 09 4.3 osze und europäische sicherheitsstruktur 31 1.2 schlanker staat für freie bürger 09 4.4 bundeswehr stärken 31 1.3 die gewaltenteilung gewährleisten 10 4.4.1 keine europäische armee 31 1.4 trennung von amt und mandat 10 4.4.2 wehrpflicht wieder einsetzen 32 1.5 macht der parteien beschränken 11 4.5 entwicklungshilfe 32 1.5.1 parteienfinanzierung dem verfassungsrecht anpassen 11 1.5.2 freie listenwahl und freies mandat 12 5 | arbeitsmarkt und sozialpolitik 34 1.5.3 verkleinerung des bundestages 12 1.5.4 wider das berufspolitikertum: amtszeit begrenzen 13 5.1 arbeitsmarkt von unnötiger bürokratie befreien 36 1.5.5 direktwahl des bundespräsidenten durch das volk 13 5.2 bundesagentur für arbeit auflösen und kommunale 1.6 lobbyismus eindämmen 13 jobcenter aufwerten 36 1.6.1 private rentenvorsorge für parlamentarier 14 5.3 mindestlohn beibehalten 36 1.6.2 einführung eines straftatbestandes der 5.4 reform der sozialen sicherungssysteme 36 steuerverschwendung 14 5.4.1 finanzielle benachteiligung von familien beseitigen 37 5.4.2 “aktivierende grundsicherung” - arbeit, die sich lohnt 37 2 | europa und euro 15 5.4.3 kinder und erziehungsleistung bei der rente berücksichtigen 37 2.1 ein europa der vaterländer 17 5.4.4 pflege durch angehörige aufwerten 37 2.2 kompetenzen an die nationalstaaten zurückgeben 17 2.3 bündelung gemeinsamer europäischer interessen 18 6 | familien und kinder 39 2.4 volksabstimmung über den euro 18 2.5 keine deutsche haftung für ausländische banken 21 6.1 bekenntnis zur traditionellen familie als leitbild 41 6.2 mehr kinder statt masseneinwanderung 41 3 | innere sicherheit und justiz 23 6.3 mehr unterstützung für familien 42 6.4 wirtschaftliche zukunft trotz demografiekrise 42 3.1 polizei stärken und strafjustiz verbessern 25 6.5 diskriminierung der vollzeit-mütter stoppen 43 3.2 weisungsfreie staatsanwälte, unabhängige richter 6.6 alleinerziehende unterstützen.</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">familien stärken 43 und parteiferne rechnungshöfe 25 6.7 willkommenskultur für neu- und ungeborene 44 3.3 angriffe auf amtspersonen härter bestrafen 26 3.4 opferschutz statt täterschutz 26 3.5 waffenrecht muss nicht verschärft werden 26 3.6 kein datenschutz für täter 27 3.7 organisierte kriminalität nachhaltig bekämpfen 27 3.8 zivil- und fachgerichte sind ein standortfaktor 27 3.9 deutsche grenzen schützen 27</td>
+<td style="text-align: left;">familien stärken 44 und parteiferne rechnungshöfe 25 6.7 willkommenskultur für neu- und ungeborene 44 3.3 angriffe auf amtspersonen härter bestrafen 26 3.4 opferschutz statt täterschutz 26 3.5 waffenrecht muss nicht verschärft werden 26 3.6 kein datenschutz für täter 27 3.7 organisierte kriminalität nachhaltig bekämpfen 27 3.8 zivil- und fachgerichte sind ein standortfaktor 27 3.9 deutsche grenzen schützen 27</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">3 programm für deutschland | inhalt 7 | kultur, sprache und identität 45 9 | einwanderung, integration und asyl 57 7.1 deutsche kultur, sprache und identität erhalten 47 9.1 keine irreguläre einwanderung über das asylrecht 59 7.2 deutsche leitkultur statt multikulturalismus 47 9.1.1 asylzuwanderung - für einen paradigmenwechsel 59 7.3 die deutsche sprache als zentrum unserer identität 47 9.1.2 rückführung - schluss mit fehlanreizen und 7.4 kultur und kunst von einflussnahme der parteien befreien 48 falscher nachsicht 60 7.5 für eine zeitgemäße medienpolitik: rundfunkbeitrag abschaffen 48 9.2 einwanderung aus eu-staaten 61 7.6 der islam im spannungsverhältnis zu unserer werteordnung 48 9.3 gesteuerte einwanderung aus drittstaaten 62 7.6.1 der islam gehört nicht zu deutschland 49 9.4 integration - mehr als nur deutsch lernen 63 7.6.2 kritik am islam muss erlaubt sein 49 9.5 kosten der einwanderung - transparenz herstellen 63 7.6.3 auslandsfinanzierung von moscheen beenden 49 9.6 einwandererkriminalität - nichts verschleiern, 7.6.4 keine öffentlich-rechtliche körperschaft für nichts verschweigen 64 islamische organisationen 50 9.7 einbürgerung - abschluss gelungener integration 65 7.6.5 keine vollverschleierung im öffentlichen raum 50 10 | wirtschaft, digitale welt und verbraucherschutz 66 8 | schule, hochschule und forschung 51 10.1 freier wettbewerb sichert unseren wohlstand 67 8.1 forschung und lehre: in freiheit und als einheit 52 10.2 soziale marktwirtschaft statt planwirtschaft 67 8.1.1 autonomie durch grundfinanzierung stärken 52 10.3 internationale wirtschaftspolitik neu ausrichten 67 8.1.2 förderung der “gender-forschung” beenden 52 10.4 hohe standards für handelsabkommen 68 8.1.3 diplom, magister und staatsexamen wieder einführen 52 10.5 bürokratie abbauen 68 8.1.4 studienanforderungen erhöhen 53 10.6 den technologiestandort deutschland voranbringen 68 8.2 unser schulsystem: stark durch differenzierung 53 10.7 staatliche subventionen reduzieren und befristen 69 8.2.1 die einheitsschule führt zu qualitätsverlust 53 10.8 keine privatisierung gegen den willen der bürger 69 8.2.2 wissensvermittlung muss zentrales anliegen bleiben 53 10.9 der mittelstand als herz unserer wirtschaftskraft 69 8.2.3 leistungsbereitschaft und disziplin stärken 54 10.10 digitalisierung als chance und herausforderung 69 8.2.4 politisch-ideologische indoktrination darf es an 10.10.1 quelloffene software und sichere hardware 69 der schule nicht geben 54 10.10.2 sichere kommunikation als standortvorteil 8.2.5 duale berufliche bildung stärken und erhalten 54 und bürgerrecht 70 8.2.6 keine inklusion “um jeden preis”.</td>
@@ -262,11 +264,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>d2<span class="sc">$</span>word[<span class="dv">10</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "weniger subventionen    88      13.7 fischerei, forst und jagd: im einklang mit der natur     88      13.8 flächenkonkurrenz:           nicht zu lasten der land- und forstwirtschaft            88"</code></pre>
+<pre><code>[1] "weniger subventionen    88       13.7 fischerei, forst und jagd: im einklang mit der natur     88       13.8 flächenkonkurrenz:            nicht zu lasten der land- und forstwirtschaft            88"</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>d3<span class="sc">$</span>word[<span class="dv">10</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "weniger subventionen          . fischerei, forst und jagd: im einklang mit der natur           . flächenkonkurrenz:           nicht zu lasten der land- und forstwirtschaft            "</code></pre>
+<pre><code>[1] "weniger subventionen           . fischerei, forst und jagd: im einklang mit der natur            . flächenkonkurrenz:            nicht zu lasten der land- und forstwirtschaft            "</code></pre>
 </div>
 </div>
 <p>Ok.</p>
@@ -357,14 +359,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">word_count_per_sentence</td>
-<td style="text-align: right;">21.86093</td>
-<td style="text-align: right;">17.23801</td>
+<td style="text-align: right;">21.94444</td>
+<td style="text-align: right;">17.01216</td>
 <td style="text-align: right;">19</td>
-<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
 <td style="text-align: right;">254</td>
-<td style="text-align: right;">3.843274</td>
-<td style="text-align: right;">37.5212</td>
-<td style="text-align: right;">1208</td>
+<td style="text-align: right;">3.92795</td>
+<td style="text-align: right;">39.4383</td>
+<td style="text-align: right;">1206</td>
 <td style="text-align: right;">0</td>
 </tr>
 </tbody>
@@ -509,7 +511,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("https:\/\/sebastiansauer\.github\.io\/Datenwerk2\/");
+        var filterRegex = new RegExp("https:\/\/sebastiansauer\.github\.io\/datenwerk\/");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
@@ -881,82 +883,84 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb12-43"><a href="#cb12-43" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb12-46"><a href="#cb12-46" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
 <span id="cb12-47"><a href="#cb12-47" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb12-48"><a href="#cb12-48" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb12-49"><a href="#cb12-49" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-50"><a href="#cb12-50" aria-hidden="true" tabindex="-1"></a>Text aus PDF-Dateien kann man mit dem Paket <span class="co">[</span><span class="ot">`pdftools`</span><span class="co">](https://docs.ropensci.org/pdftools/)</span> einlesen:</span>
-<span id="cb12-51"><a href="#cb12-51" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-54"><a href="#cb12-54" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb12-55"><a href="#cb12-55" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(pdftools)</span>
-<span id="cb12-56"><a href="#cb12-56" aria-hidden="true" tabindex="-1"></a>d_path <span class="ot">&lt;-</span> <span class="st">"~/Literatur/_Div/Politik/afd-grundsatzprogramm-2022.pdf"</span></span>
+<span id="cb12-48"><a href="#cb12-48" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(here)</span>
+<span id="cb12-49"><a href="#cb12-49" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb12-50"><a href="#cb12-50" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-51"><a href="#cb12-51" aria-hidden="true" tabindex="-1"></a>Text aus PDF-Dateien kann man mit dem Paket <span class="co">[</span><span class="ot">`pdftools`</span><span class="co">](https://docs.ropensci.org/pdftools/)</span> einlesen:</span>
+<span id="cb12-52"><a href="#cb12-52" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-55"><a href="#cb12-55" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb12-56"><a href="#cb12-56" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(pdftools)</span>
 <span id="cb12-57"><a href="#cb12-57" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-58"><a href="#cb12-58" aria-hidden="true" tabindex="-1"></a>d <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">text =</span> <span class="fu">pdf_text</span>(d_path))</span>
-<span id="cb12-59"><a href="#cb12-59" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb12-60"><a href="#cb12-60" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-61"><a href="#cb12-61" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-62"><a href="#cb12-62" aria-hidden="true" tabindex="-1"></a>Dann erstellen wir eine Tidy-Version und tokenisieren nach Sätzen:</span>
+<span id="cb12-58"><a href="#cb12-58" aria-hidden="true" tabindex="-1"></a>d_path <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="fu">here</span>(), <span class="st">"/data/afd-grundsatzprogramm-2022.pdf"</span>)</span>
+<span id="cb12-59"><a href="#cb12-59" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-60"><a href="#cb12-60" aria-hidden="true" tabindex="-1"></a>d <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">text =</span> <span class="fu">pdf_text</span>(d_path))</span>
+<span id="cb12-61"><a href="#cb12-61" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb12-62"><a href="#cb12-62" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb12-63"><a href="#cb12-63" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-66"><a href="#cb12-66" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb12-67"><a href="#cb12-67" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidytext)</span>
-<span id="cb12-68"><a href="#cb12-68" aria-hidden="true" tabindex="-1"></a>d2 <span class="ot">&lt;-</span></span>
-<span id="cb12-69"><a href="#cb12-69" aria-hidden="true" tabindex="-1"></a>  d <span class="sc">%&gt;%</span> </span>
-<span id="cb12-70"><a href="#cb12-70" aria-hidden="true" tabindex="-1"></a>  <span class="fu">unnest_sentences</span>(<span class="at">output =</span> word, <span class="at">input =</span> text)</span>
-<span id="cb12-71"><a href="#cb12-71" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-72"><a href="#cb12-72" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(d2)</span>
-<span id="cb12-73"><a href="#cb12-73" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb12-74"><a href="#cb12-74" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-75"><a href="#cb12-75" aria-hidden="true" tabindex="-1"></a>Dann entfernen wir die Zahlen:</span>
+<span id="cb12-64"><a href="#cb12-64" aria-hidden="true" tabindex="-1"></a>Dann erstellen wir eine Tidy-Version und tokenisieren nach Sätzen:</span>
+<span id="cb12-65"><a href="#cb12-65" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-68"><a href="#cb12-68" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb12-69"><a href="#cb12-69" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidytext)</span>
+<span id="cb12-70"><a href="#cb12-70" aria-hidden="true" tabindex="-1"></a>d2 <span class="ot">&lt;-</span></span>
+<span id="cb12-71"><a href="#cb12-71" aria-hidden="true" tabindex="-1"></a>  d <span class="sc">%&gt;%</span> </span>
+<span id="cb12-72"><a href="#cb12-72" aria-hidden="true" tabindex="-1"></a>  <span class="fu">unnest_sentences</span>(<span class="at">output =</span> word, <span class="at">input =</span> text)</span>
+<span id="cb12-73"><a href="#cb12-73" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-74"><a href="#cb12-74" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(d2)</span>
+<span id="cb12-75"><a href="#cb12-75" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb12-76"><a href="#cb12-76" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-79"><a href="#cb12-79" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb12-80"><a href="#cb12-80" aria-hidden="true" tabindex="-1"></a>d3 <span class="ot">&lt;-</span> </span>
-<span id="cb12-81"><a href="#cb12-81" aria-hidden="true" tabindex="-1"></a>  d2 <span class="sc">%&gt;%</span> </span>
-<span id="cb12-82"><a href="#cb12-82" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">word =</span> <span class="fu">str_remove_all</span>(word, <span class="at">pattern =</span> <span class="st">"[:digit:]+"</span>))</span>
-<span id="cb12-83"><a href="#cb12-83" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb12-84"><a href="#cb12-84" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-85"><a href="#cb12-85" aria-hidden="true" tabindex="-1"></a>Prüfen wir, ob es geklappt hat:</span>
+<span id="cb12-77"><a href="#cb12-77" aria-hidden="true" tabindex="-1"></a>Dann entfernen wir die Zahlen:</span>
+<span id="cb12-78"><a href="#cb12-78" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-81"><a href="#cb12-81" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb12-82"><a href="#cb12-82" aria-hidden="true" tabindex="-1"></a>d3 <span class="ot">&lt;-</span> </span>
+<span id="cb12-83"><a href="#cb12-83" aria-hidden="true" tabindex="-1"></a>  d2 <span class="sc">%&gt;%</span> </span>
+<span id="cb12-84"><a href="#cb12-84" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">word =</span> <span class="fu">str_remove_all</span>(word, <span class="at">pattern =</span> <span class="st">"[:digit:]+"</span>))</span>
+<span id="cb12-85"><a href="#cb12-85" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb12-86"><a href="#cb12-86" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-89"><a href="#cb12-89" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb12-90"><a href="#cb12-90" aria-hidden="true" tabindex="-1"></a>d2<span class="sc">$</span>word[<span class="dv">10</span>]</span>
-<span id="cb12-91"><a href="#cb12-91" aria-hidden="true" tabindex="-1"></a>d3<span class="sc">$</span>word[<span class="dv">10</span>]</span>
-<span id="cb12-92"><a href="#cb12-92" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb12-93"><a href="#cb12-93" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-94"><a href="#cb12-94" aria-hidden="true" tabindex="-1"></a>Ok.</span>
+<span id="cb12-87"><a href="#cb12-87" aria-hidden="true" tabindex="-1"></a>Prüfen wir, ob es geklappt hat:</span>
+<span id="cb12-88"><a href="#cb12-88" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-91"><a href="#cb12-91" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb12-92"><a href="#cb12-92" aria-hidden="true" tabindex="-1"></a>d2<span class="sc">$</span>word[<span class="dv">10</span>]</span>
+<span id="cb12-93"><a href="#cb12-93" aria-hidden="true" tabindex="-1"></a>d3<span class="sc">$</span>word[<span class="dv">10</span>]</span>
+<span id="cb12-94"><a href="#cb12-94" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb12-95"><a href="#cb12-95" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-96"><a href="#cb12-96" aria-hidden="true" tabindex="-1"></a>Dann zählen wir die Wörter pro Satz:</span>
+<span id="cb12-96"><a href="#cb12-96" aria-hidden="true" tabindex="-1"></a>Ok.</span>
 <span id="cb12-97"><a href="#cb12-97" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-98"><a href="#cb12-98" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-101"><a href="#cb12-101" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb12-102"><a href="#cb12-102" aria-hidden="true" tabindex="-1"></a>d4 <span class="ot">&lt;-</span> </span>
-<span id="cb12-103"><a href="#cb12-103" aria-hidden="true" tabindex="-1"></a>  d3 <span class="sc">%&gt;%</span> </span>
-<span id="cb12-104"><a href="#cb12-104" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">word_count_per_sentence =</span> <span class="fu">str_count</span>(word, <span class="st">"</span><span class="sc">\\</span><span class="st">w+"</span>))</span>
-<span id="cb12-105"><a href="#cb12-105" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-106"><a href="#cb12-106" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(d4)</span>
-<span id="cb12-107"><a href="#cb12-107" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb12-108"><a href="#cb12-108" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-109"><a href="#cb12-109" aria-hidden="true" tabindex="-1"></a>Visualisierung:</span>
+<span id="cb12-98"><a href="#cb12-98" aria-hidden="true" tabindex="-1"></a>Dann zählen wir die Wörter pro Satz:</span>
+<span id="cb12-99"><a href="#cb12-99" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-100"><a href="#cb12-100" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-103"><a href="#cb12-103" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb12-104"><a href="#cb12-104" aria-hidden="true" tabindex="-1"></a>d4 <span class="ot">&lt;-</span> </span>
+<span id="cb12-105"><a href="#cb12-105" aria-hidden="true" tabindex="-1"></a>  d3 <span class="sc">%&gt;%</span> </span>
+<span id="cb12-106"><a href="#cb12-106" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">word_count_per_sentence =</span> <span class="fu">str_count</span>(word, <span class="st">"</span><span class="sc">\\</span><span class="st">w+"</span>))</span>
+<span id="cb12-107"><a href="#cb12-107" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-108"><a href="#cb12-108" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(d4)</span>
+<span id="cb12-109"><a href="#cb12-109" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb12-110"><a href="#cb12-110" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-113"><a href="#cb12-113" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb12-114"><a href="#cb12-114" aria-hidden="true" tabindex="-1"></a>d4 <span class="sc">%&gt;%</span> </span>
-<span id="cb12-115"><a href="#cb12-115" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> word_count_per_sentence)) <span class="sc">+</span></span>
-<span id="cb12-116"><a href="#cb12-116" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>()</span>
-<span id="cb12-117"><a href="#cb12-117" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb12-118"><a href="#cb12-118" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-119"><a href="#cb12-119" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-122"><a href="#cb12-122" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb12-123"><a href="#cb12-123" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(easystats)</span>
-<span id="cb12-124"><a href="#cb12-124" aria-hidden="true" tabindex="-1"></a><span class="fu">describe_distribution</span>(d4)</span>
-<span id="cb12-125"><a href="#cb12-125" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb12-126"><a href="#cb12-126" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-127"><a href="#cb12-127" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-111"><a href="#cb12-111" aria-hidden="true" tabindex="-1"></a>Visualisierung:</span>
+<span id="cb12-112"><a href="#cb12-112" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-115"><a href="#cb12-115" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb12-116"><a href="#cb12-116" aria-hidden="true" tabindex="-1"></a>d4 <span class="sc">%&gt;%</span> </span>
+<span id="cb12-117"><a href="#cb12-117" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> word_count_per_sentence)) <span class="sc">+</span></span>
+<span id="cb12-118"><a href="#cb12-118" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>()</span>
+<span id="cb12-119"><a href="#cb12-119" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb12-120"><a href="#cb12-120" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-121"><a href="#cb12-121" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-124"><a href="#cb12-124" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb12-125"><a href="#cb12-125" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(easystats)</span>
+<span id="cb12-126"><a href="#cb12-126" aria-hidden="true" tabindex="-1"></a><span class="fu">describe_distribution</span>(d4)</span>
+<span id="cb12-127"><a href="#cb12-127" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb12-128"><a href="#cb12-128" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb12-129"><a href="#cb12-129" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb12-130"><a href="#cb12-130" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-131"><a href="#cb12-131" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb12-131"><a href="#cb12-131" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb12-132"><a href="#cb12-132" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-133"><a href="#cb12-133" aria-hidden="true" tabindex="-1"></a>Categories: </span>
+<span id="cb12-133"><a href="#cb12-133" aria-hidden="true" tabindex="-1"></a>---</span>
 <span id="cb12-134"><a href="#cb12-134" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-135"><a href="#cb12-135" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>R</span>
-<span id="cb12-136"><a href="#cb12-136" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>map</span>
-<span id="cb12-137"><a href="#cb12-137" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>tidyverse</span>
+<span id="cb12-135"><a href="#cb12-135" aria-hidden="true" tabindex="-1"></a>Categories: </span>
+<span id="cb12-136"><a href="#cb12-136" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-137"><a href="#cb12-137" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>R</span>
+<span id="cb12-138"><a href="#cb12-138" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>map</span>
+<span id="cb12-139"><a href="#cb12-139" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>tidyverse</span>
 </code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->

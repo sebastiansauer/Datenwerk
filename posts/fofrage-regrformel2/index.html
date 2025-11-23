@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.31">
+<meta name="generator" content="quarto-1.7.32">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -72,10 +72,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-36228135ecc5ef07794e934de038b4b3.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-b985dc545f03a853cc00dfbebf9617fd.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -216,12 +216,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(penguins)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>penguins <span class="ot">&lt;-</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  penguins <span class="sc">|&gt;</span> </span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(sex <span class="sc">==</span> <span class="st">"female"</span> <span class="sc">|</span> sex <span class="sc">==</span> <span class="st">"male"</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">drop_na</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(penguins)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>penguins <span class="ot">&lt;-</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  penguins <span class="sc">|&gt;</span> </span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(sex <span class="sc">==</span> <span class="st">"female"</span> <span class="sc">|</span> sex <span class="sc">==</span> <span class="st">"male"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">drop_na</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(easystats)</span>
@@ -231,15 +232,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(penguins)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Rows: 344
+<pre><code>Rows: 333
 Columns: 8
 $ species           &lt;fct&gt; Adelie, Adelie, Adelie, Adelie, Adelie, Adelie, Adel…
 $ island            &lt;fct&gt; Torgersen, Torgersen, Torgersen, Torgersen, Torgerse…
-$ bill_length_mm    &lt;dbl&gt; 39.1, 39.5, 40.3, NA, 36.7, 39.3, 38.9, 39.2, 34.1, …
-$ bill_depth_mm     &lt;dbl&gt; 18.7, 17.4, 18.0, NA, 19.3, 20.6, 17.8, 19.6, 18.1, …
-$ flipper_length_mm &lt;int&gt; 181, 186, 195, NA, 193, 190, 181, 195, 193, 190, 186…
-$ body_mass_g       &lt;int&gt; 3750, 3800, 3250, NA, 3450, 3650, 3625, 4675, 3475, …
-$ sex               &lt;fct&gt; male, female, female, NA, female, male, female, male…
+$ bill_length_mm    &lt;dbl&gt; 39.1, 39.5, 40.3, 36.7, 39.3, 38.9, 39.2, 41.1, 38.6…
+$ bill_depth_mm     &lt;dbl&gt; 18.7, 17.4, 18.0, 19.3, 20.6, 17.8, 19.6, 17.6, 21.2…
+$ flipper_length_mm &lt;int&gt; 181, 186, 195, 193, 190, 181, 195, 182, 191, 198, 18…
+$ body_mass_g       &lt;int&gt; 3750, 3800, 3250, 3450, 3650, 3625, 4675, 3200, 3800…
+$ sex               &lt;fct&gt; male, female, female, female, male, female, male, fe…
 $ year              &lt;int&gt; 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007…</code></pre>
 </div>
 </div>
@@ -264,12 +265,12 @@ $ year              &lt;int&gt; 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 
 <table class="caption-top table table-sm table-striped small">
 <colgroup>
 <col style="width: 13%">
-<col style="width: 9%">
-<col style="width: 21%">
+<col style="width: 10%">
+<col style="width: 22%">
 <col style="width: 6%">
 <col style="width: 7%">
-<col style="width: 9%">
-<col style="width: 31%">
+<col style="width: 6%">
+<col style="width: 32%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -285,20 +286,20 @@ $ year              &lt;int&gt; 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">(Intercept)</td>
-<td style="text-align: center;">3861.44</td>
-<td style="text-align: center;">(3746.15, 3976.46)</td>
+<td style="text-align: center;">3862.77</td>
+<td style="text-align: center;">(3754.51, 3974.33)</td>
 <td style="text-align: center;">100%</td>
-<td style="text-align: center;">0.999</td>
-<td style="text-align: center;">3744.00</td>
+<td style="text-align: center;">1.001</td>
+<td style="text-align: center;">3757</td>
 <td style="text-align: center;">Normal (4207.06 +- 2013.04)</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">sexmale</td>
-<td style="text-align: center;">685.48</td>
-<td style="text-align: center;">(527.35, 839.91)</td>
+<td style="text-align: center;">682.87</td>
+<td style="text-align: center;">(527.74, 838.00)</td>
 <td style="text-align: center;">100%</td>
 <td style="text-align: center;">1.000</td>
-<td style="text-align: center;">3914.00</td>
+<td style="text-align: center;">4016</td>
 <td style="text-align: center;">Normal (0.00 +- 4020.19)</td>
 </tr>
 </tbody>
@@ -317,13 +318,13 @@ $ year              &lt;int&gt; 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 
 <div class="cell-output-display">
 <table class="caption-top table table-sm table-striped small">
 <colgroup>
-<col style="width: 17%">
+<col style="width: 18%">
 <col style="width: 9%">
-<col style="width: 20%">
+<col style="width: 21%">
 <col style="width: 6%">
 <col style="width: 7%">
-<col style="width: 9%">
-<col style="width: 29%">
+<col style="width: 6%">
+<col style="width: 30%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -339,30 +340,30 @@ $ year              &lt;int&gt; 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">(Intercept)</td>
-<td style="text-align: center;">3997.87</td>
-<td style="text-align: center;">(3902.86, 4100.09)</td>
+<td style="text-align: center;">4003.05</td>
+<td style="text-align: center;">(3903.36, 4102.60)</td>
 <td style="text-align: center;">100%</td>
 <td style="text-align: center;">1.000</td>
-<td style="text-align: center;">4352.00</td>
+<td style="text-align: center;">4240</td>
 <td style="text-align: center;">Normal (4207.06 +- 2013.04)</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">sexmale</td>
-<td style="text-align: center;">404.20</td>
-<td style="text-align: center;">(260.25, 547.75)</td>
+<td style="text-align: center;">404.96</td>
+<td style="text-align: center;">(263.54, 548.73)</td>
 <td style="text-align: center;">100%</td>
-<td style="text-align: center;">0.999</td>
-<td style="text-align: center;">4062.00</td>
+<td style="text-align: center;">1.001</td>
+<td style="text-align: center;">4168</td>
 <td style="text-align: center;">Normal (0.00 +- 4020.19)</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">bill_length_mm_z</td>
-<td style="text-align: center;">405.02</td>
-<td style="text-align: center;">(332.41, 474.78)</td>
+<td style="text-align: center;">405.98</td>
+<td style="text-align: center;">(335.34, 475.15)</td>
 <td style="text-align: center;">100%</td>
-<td style="text-align: center;">0.999</td>
-<td style="text-align: center;">3912.00</td>
-<td style="text-align: center;">Normal (0.00 +- 2009.70)</td>
+<td style="text-align: center;">1.000</td>
+<td style="text-align: center;">4183</td>
+<td style="text-align: center;">Normal (0.00 +- 2013.04)</td>
 </tr>
 </tbody>
 </table>
@@ -380,12 +381,12 @@ $ year              &lt;int&gt; 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 
 <div class="cell-output-display">
 <table class="caption-top table table-sm table-striped small">
 <colgroup>
-<col style="width: 23%">
+<col style="width: 24%">
 <col style="width: 8%">
-<col style="width: 18%">
+<col style="width: 19%">
 <col style="width: 7%">
 <col style="width: 6%">
-<col style="width: 8%">
+<col style="width: 5%">
 <col style="width: 27%">
 </colgroup>
 <thead>
@@ -402,39 +403,39 @@ $ year              &lt;int&gt; 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">(Intercept)</td>
-<td style="text-align: center;">4007.58</td>
-<td style="text-align: center;">(3901.18, 4109.34)</td>
+<td style="text-align: center;">4011.90</td>
+<td style="text-align: center;">(3909.94, 4111.74)</td>
 <td style="text-align: center;">100%</td>
 <td style="text-align: center;">1.001</td>
-<td style="text-align: center;">3112.00</td>
+<td style="text-align: center;">2850</td>
 <td style="text-align: center;">Normal (4207.06 +- 2013.04)</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">sexmale</td>
-<td style="text-align: center;">403.51</td>
-<td style="text-align: center;">(261.36, 550.59)</td>
+<td style="text-align: center;">402.86</td>
+<td style="text-align: center;">(258.26, 547.62)</td>
 <td style="text-align: center;">100%</td>
-<td style="text-align: center;">0.999</td>
-<td style="text-align: center;">3451.00</td>
+<td style="text-align: center;">1.000</td>
+<td style="text-align: center;">3331</td>
 <td style="text-align: center;">Normal (0.00 +- 4020.19)</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">bill_length_mm_z</td>
-<td style="text-align: center;">431.34</td>
-<td style="text-align: center;">(321.55, 539.94)</td>
+<td style="text-align: center;">430.91</td>
+<td style="text-align: center;">(323.03, 534.95)</td>
 <td style="text-align: center;">100%</td>
-<td style="text-align: center;">0.999</td>
-<td style="text-align: center;">2423.00</td>
-<td style="text-align: center;">Normal (0.00 +- 2009.70)</td>
+<td style="text-align: center;">1.000</td>
+<td style="text-align: center;">2268</td>
+<td style="text-align: center;">Normal (0.00 +- 2013.04)</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">sexmale:bill_length_mm_z</td>
-<td style="text-align: center;">-49.99</td>
-<td style="text-align: center;">(-193.08, 96.77)</td>
-<td style="text-align: center;">75.12%</td>
+<td style="text-align: center;">-46.24</td>
+<td style="text-align: center;">(-193.60, 98.95)</td>
+<td style="text-align: center;">74.35%</td>
 <td style="text-align: center;">1.000</td>
-<td style="text-align: center;">2370.00</td>
-<td style="text-align: center;">Normal (0.00 +- 2798.31)</td>
+<td style="text-align: center;">2372</td>
+<td style="text-align: center;">Normal (0.00 +- 2809.11)</td>
 </tr>
 </tbody>
 </table>
@@ -454,10 +455,10 @@ $ year              &lt;int&gt; 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 
 <colgroup>
 <col style="width: 25%">
 <col style="width: 8%">
-<col style="width: 18%">
+<col style="width: 19%">
 <col style="width: 5%">
 <col style="width: 6%">
-<col style="width: 8%">
+<col style="width: 5%">
 <col style="width: 27%">
 </colgroup>
 <thead>
@@ -474,30 +475,30 @@ $ year              &lt;int&gt; 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">(Intercept)</td>
-<td style="text-align: center;">4211.78</td>
-<td style="text-align: center;">(4134.77, 4286.61)</td>
+<td style="text-align: center;">4218.11</td>
+<td style="text-align: center;">(4141.49, 4297.53)</td>
 <td style="text-align: center;">100%</td>
 <td style="text-align: center;">1.000</td>
-<td style="text-align: center;">4260.00</td>
+<td style="text-align: center;">5231</td>
 <td style="text-align: center;">Normal (4207.06 +- 2013.04)</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">sexfemale:bill_length_mm_z</td>
-<td style="text-align: center;">505.18</td>
-<td style="text-align: center;">(398.87, 614.19)</td>
+<td style="text-align: center;">508.32</td>
+<td style="text-align: center;">(401.67, 616.78)</td>
 <td style="text-align: center;">100%</td>
 <td style="text-align: center;">1.000</td>
-<td style="text-align: center;">4807.00</td>
-<td style="text-align: center;">Normal (0.00 +- 3082.48)</td>
+<td style="text-align: center;">4479</td>
+<td style="text-align: center;">Normal (0.00 +- 3079.61)</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">sexmale:bill_length_mm_z</td>
-<td style="text-align: center;">448.19</td>
-<td style="text-align: center;">(345.98, 543.46)</td>
+<td style="text-align: center;">445.40</td>
+<td style="text-align: center;">(346.36, 546.72)</td>
 <td style="text-align: center;">100%</td>
 <td style="text-align: center;">1.000</td>
-<td style="text-align: center;">4955.00</td>
-<td style="text-align: center;">Normal (0.00 +- 2798.31)</td>
+<td style="text-align: center;">5301</td>
+<td style="text-align: center;">Normal (0.00 +- 2809.11)</td>
 </tr>
 </tbody>
 </table>
@@ -650,7 +651,7 @@ $ year              &lt;int&gt; 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("https:\/\/sebastiansauer\.github\.io\/Datenwerk2\/");
+        var filterRegex = new RegExp("https:\/\/sebastiansauer\.github\.io\/datenwerk\/");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
@@ -1030,104 +1031,104 @@ $ year              &lt;int&gt; 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 
 <span id="cb7-51"><a href="#cb7-51" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-54"><a href="#cb7-54" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
 <span id="cb7-55"><a href="#cb7-55" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins)</span>
-<span id="cb7-56"><a href="#cb7-56" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(penguins)</span>
-<span id="cb7-57"><a href="#cb7-57" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-58"><a href="#cb7-58" aria-hidden="true" tabindex="-1"></a>penguins <span class="ot">&lt;-</span></span>
-<span id="cb7-59"><a href="#cb7-59" aria-hidden="true" tabindex="-1"></a>  penguins <span class="sc">|&gt;</span> </span>
-<span id="cb7-60"><a href="#cb7-60" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(sex <span class="sc">==</span> <span class="st">"female"</span> <span class="sc">|</span> sex <span class="sc">==</span> <span class="st">"male"</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb7-61"><a href="#cb7-61" aria-hidden="true" tabindex="-1"></a>  <span class="fu">drop_na</span>()</span>
-<span id="cb7-62"><a href="#cb7-62" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb7-63"><a href="#cb7-63" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-56"><a href="#cb7-56" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb7-57"><a href="#cb7-57" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(penguins)</span>
+<span id="cb7-58"><a href="#cb7-58" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-59"><a href="#cb7-59" aria-hidden="true" tabindex="-1"></a>penguins <span class="ot">&lt;-</span></span>
+<span id="cb7-60"><a href="#cb7-60" aria-hidden="true" tabindex="-1"></a>  penguins <span class="sc">|&gt;</span> </span>
+<span id="cb7-61"><a href="#cb7-61" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(sex <span class="sc">==</span> <span class="st">"female"</span> <span class="sc">|</span> sex <span class="sc">==</span> <span class="st">"male"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb7-62"><a href="#cb7-62" aria-hidden="true" tabindex="-1"></a>  <span class="fu">drop_na</span>()</span>
+<span id="cb7-63"><a href="#cb7-63" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb7-64"><a href="#cb7-64" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-65"><a href="#cb7-65" aria-hidden="true" tabindex="-1"></a><span class="in">```{r load-libs}</span></span>
-<span id="cb7-66"><a href="#cb7-66" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(easystats)</span>
-<span id="cb7-67"><a href="#cb7-67" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb7-68"><a href="#cb7-68" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(rstanarm)</span>
-<span id="cb7-69"><a href="#cb7-69" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb7-70"><a href="#cb7-70" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-73"><a href="#cb7-73" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb7-74"><a href="#cb7-74" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(penguins)</span>
-<span id="cb7-75"><a href="#cb7-75" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb7-76"><a href="#cb7-76" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-65"><a href="#cb7-65" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-66"><a href="#cb7-66" aria-hidden="true" tabindex="-1"></a><span class="in">```{r load-libs}</span></span>
+<span id="cb7-67"><a href="#cb7-67" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(easystats)</span>
+<span id="cb7-68"><a href="#cb7-68" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb7-69"><a href="#cb7-69" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(rstanarm)</span>
+<span id="cb7-70"><a href="#cb7-70" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb7-71"><a href="#cb7-71" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-74"><a href="#cb7-74" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb7-75"><a href="#cb7-75" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(penguins)</span>
+<span id="cb7-76"><a href="#cb7-76" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb7-77"><a href="#cb7-77" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-78"><a href="#cb7-78" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-79"><a href="#cb7-79" aria-hidden="true" tabindex="-1"></a>Zur besseren Interpretierbarkeit sind die metrischen UV standardisiert:</span>
-<span id="cb7-80"><a href="#cb7-80" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-81"><a href="#cb7-81" aria-hidden="true" tabindex="-1"></a><span class="in">```{r standardize}</span></span>
-<span id="cb7-82"><a href="#cb7-82" aria-hidden="true" tabindex="-1"></a>penguins_z <span class="ot">&lt;-</span> <span class="fu">standardize</span>(penguins, <span class="at">select =</span> bill_length_mm, <span class="at">append =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb7-83"><a href="#cb7-83" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb7-84"><a href="#cb7-84" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-79"><a href="#cb7-79" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-80"><a href="#cb7-80" aria-hidden="true" tabindex="-1"></a>Zur besseren Interpretierbarkeit sind die metrischen UV standardisiert:</span>
+<span id="cb7-81"><a href="#cb7-81" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-82"><a href="#cb7-82" aria-hidden="true" tabindex="-1"></a><span class="in">```{r standardize}</span></span>
+<span id="cb7-83"><a href="#cb7-83" aria-hidden="true" tabindex="-1"></a>penguins_z <span class="ot">&lt;-</span> <span class="fu">standardize</span>(penguins, <span class="at">select =</span> bill_length_mm, <span class="at">append =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb7-84"><a href="#cb7-84" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb7-85"><a href="#cb7-85" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-86"><a href="#cb7-86" aria-hidden="true" tabindex="-1"></a>Es werden verschiedenen Modelle berechnet, die sich in ihrem Regressionsformel unterscheiden:</span>
-<span id="cb7-87"><a href="#cb7-87" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-88"><a href="#cb7-88" aria-hidden="true" tabindex="-1"></a><span class="in">```{r compute-models}</span></span>
-<span id="cb7-89"><a href="#cb7-89" aria-hidden="true" tabindex="-1"></a>m1 <span class="ot">&lt;-</span> <span class="fu">stan_glm</span>(body_mass_g <span class="sc">~</span> sex, <span class="at">data =</span> penguins_z, </span>
-<span id="cb7-90"><a href="#cb7-90" aria-hidden="true" tabindex="-1"></a>               <span class="at">refresh =</span> <span class="dv">0</span>)</span>
-<span id="cb7-91"><a href="#cb7-91" aria-hidden="true" tabindex="-1"></a>m2 <span class="ot">&lt;-</span> <span class="fu">stan_glm</span>(body_mass_g <span class="sc">~</span> sex <span class="sc">+</span> bill_length_mm_z, <span class="at">data =</span> penguins_z, </span>
-<span id="cb7-92"><a href="#cb7-92" aria-hidden="true" tabindex="-1"></a>               <span class="at">refresh =</span> <span class="dv">0</span>)</span>
-<span id="cb7-93"><a href="#cb7-93" aria-hidden="true" tabindex="-1"></a>m3 <span class="ot">&lt;-</span> <span class="fu">stan_glm</span>(body_mass_g <span class="sc">~</span> sex <span class="sc">+</span> bill_length_mm_z <span class="sc">+</span> sex<span class="sc">:</span>bill_length_mm_z, <span class="at">data =</span> penguins_z, </span>
-<span id="cb7-94"><a href="#cb7-94" aria-hidden="true" tabindex="-1"></a>               <span class="at">refresh =</span> <span class="dv">0</span>)</span>
-<span id="cb7-95"><a href="#cb7-95" aria-hidden="true" tabindex="-1"></a>m4 <span class="ot">&lt;-</span> <span class="fu">stan_glm</span>(body_mass_g <span class="sc">~</span> sex<span class="sc">:</span>bill_length_mm_z, <span class="at">data =</span> penguins_z, </span>
-<span id="cb7-96"><a href="#cb7-96" aria-hidden="true" tabindex="-1"></a>               <span class="at">refresh =</span> <span class="dv">0</span>)</span>
-<span id="cb7-97"><a href="#cb7-97" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb7-98"><a href="#cb7-98" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-86"><a href="#cb7-86" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-87"><a href="#cb7-87" aria-hidden="true" tabindex="-1"></a>Es werden verschiedenen Modelle berechnet, die sich in ihrem Regressionsformel unterscheiden:</span>
+<span id="cb7-88"><a href="#cb7-88" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-89"><a href="#cb7-89" aria-hidden="true" tabindex="-1"></a><span class="in">```{r compute-models}</span></span>
+<span id="cb7-90"><a href="#cb7-90" aria-hidden="true" tabindex="-1"></a>m1 <span class="ot">&lt;-</span> <span class="fu">stan_glm</span>(body_mass_g <span class="sc">~</span> sex, <span class="at">data =</span> penguins_z, </span>
+<span id="cb7-91"><a href="#cb7-91" aria-hidden="true" tabindex="-1"></a>               <span class="at">refresh =</span> <span class="dv">0</span>)</span>
+<span id="cb7-92"><a href="#cb7-92" aria-hidden="true" tabindex="-1"></a>m2 <span class="ot">&lt;-</span> <span class="fu">stan_glm</span>(body_mass_g <span class="sc">~</span> sex <span class="sc">+</span> bill_length_mm_z, <span class="at">data =</span> penguins_z, </span>
+<span id="cb7-93"><a href="#cb7-93" aria-hidden="true" tabindex="-1"></a>               <span class="at">refresh =</span> <span class="dv">0</span>)</span>
+<span id="cb7-94"><a href="#cb7-94" aria-hidden="true" tabindex="-1"></a>m3 <span class="ot">&lt;-</span> <span class="fu">stan_glm</span>(body_mass_g <span class="sc">~</span> sex <span class="sc">+</span> bill_length_mm_z <span class="sc">+</span> sex<span class="sc">:</span>bill_length_mm_z, <span class="at">data =</span> penguins_z, </span>
+<span id="cb7-95"><a href="#cb7-95" aria-hidden="true" tabindex="-1"></a>               <span class="at">refresh =</span> <span class="dv">0</span>)</span>
+<span id="cb7-96"><a href="#cb7-96" aria-hidden="true" tabindex="-1"></a>m4 <span class="ot">&lt;-</span> <span class="fu">stan_glm</span>(body_mass_g <span class="sc">~</span> sex<span class="sc">:</span>bill_length_mm_z, <span class="at">data =</span> penguins_z, </span>
+<span id="cb7-97"><a href="#cb7-97" aria-hidden="true" tabindex="-1"></a>               <span class="at">refresh =</span> <span class="dv">0</span>)</span>
+<span id="cb7-98"><a href="#cb7-98" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb7-99"><a href="#cb7-99" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-100"><a href="#cb7-100" aria-hidden="true" tabindex="-1"></a>Parameter m1:</span>
-<span id="cb7-101"><a href="#cb7-101" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-104"><a href="#cb7-104" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb7-105"><a href="#cb7-105" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
-<span id="cb7-106"><a href="#cb7-106" aria-hidden="true" tabindex="-1"></a><span class="fu">parameters</span>(m1) <span class="sc">|&gt;</span> <span class="fu">print_md</span>()</span>
-<span id="cb7-107"><a href="#cb7-107" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-108"><a href="#cb7-108" aria-hidden="true" tabindex="-1"></a><span class="fu">parameters</span>(m1) <span class="sc">|&gt;</span> <span class="fu">plot</span>()</span>
-<span id="cb7-109"><a href="#cb7-109" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb7-110"><a href="#cb7-110" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-100"><a href="#cb7-100" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-101"><a href="#cb7-101" aria-hidden="true" tabindex="-1"></a>Parameter m1:</span>
+<span id="cb7-102"><a href="#cb7-102" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-105"><a href="#cb7-105" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb7-106"><a href="#cb7-106" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
+<span id="cb7-107"><a href="#cb7-107" aria-hidden="true" tabindex="-1"></a><span class="fu">parameters</span>(m1) <span class="sc">|&gt;</span> <span class="fu">print_md</span>()</span>
+<span id="cb7-108"><a href="#cb7-108" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-109"><a href="#cb7-109" aria-hidden="true" tabindex="-1"></a><span class="fu">parameters</span>(m1) <span class="sc">|&gt;</span> <span class="fu">plot</span>()</span>
+<span id="cb7-110"><a href="#cb7-110" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb7-111"><a href="#cb7-111" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-112"><a href="#cb7-112" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-113"><a href="#cb7-113" aria-hidden="true" tabindex="-1"></a>Parameter m2:</span>
-<span id="cb7-114"><a href="#cb7-114" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-117"><a href="#cb7-117" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb7-118"><a href="#cb7-118" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
-<span id="cb7-119"><a href="#cb7-119" aria-hidden="true" tabindex="-1"></a><span class="fu">parameters</span>(m2) <span class="sc">|&gt;</span> <span class="fu">print_md</span>()</span>
-<span id="cb7-120"><a href="#cb7-120" aria-hidden="true" tabindex="-1"></a><span class="fu">parameters</span>(m2) <span class="sc">|&gt;</span> <span class="fu">plot</span>()</span>
-<span id="cb7-121"><a href="#cb7-121" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb7-122"><a href="#cb7-122" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-113"><a href="#cb7-113" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-114"><a href="#cb7-114" aria-hidden="true" tabindex="-1"></a>Parameter m2:</span>
+<span id="cb7-115"><a href="#cb7-115" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-118"><a href="#cb7-118" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb7-119"><a href="#cb7-119" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
+<span id="cb7-120"><a href="#cb7-120" aria-hidden="true" tabindex="-1"></a><span class="fu">parameters</span>(m2) <span class="sc">|&gt;</span> <span class="fu">print_md</span>()</span>
+<span id="cb7-121"><a href="#cb7-121" aria-hidden="true" tabindex="-1"></a><span class="fu">parameters</span>(m2) <span class="sc">|&gt;</span> <span class="fu">plot</span>()</span>
+<span id="cb7-122"><a href="#cb7-122" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb7-123"><a href="#cb7-123" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-124"><a href="#cb7-124" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-125"><a href="#cb7-125" aria-hidden="true" tabindex="-1"></a>Parameter m3:</span>
-<span id="cb7-126"><a href="#cb7-126" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-129"><a href="#cb7-129" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb7-130"><a href="#cb7-130" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
-<span id="cb7-131"><a href="#cb7-131" aria-hidden="true" tabindex="-1"></a><span class="fu">parameters</span>(m3) <span class="sc">|&gt;</span> <span class="fu">print_md</span>()</span>
-<span id="cb7-132"><a href="#cb7-132" aria-hidden="true" tabindex="-1"></a><span class="fu">parameters</span>(m3) <span class="sc">|&gt;</span> <span class="fu">plot</span>()</span>
-<span id="cb7-133"><a href="#cb7-133" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb7-134"><a href="#cb7-134" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-125"><a href="#cb7-125" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-126"><a href="#cb7-126" aria-hidden="true" tabindex="-1"></a>Parameter m3:</span>
+<span id="cb7-127"><a href="#cb7-127" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-130"><a href="#cb7-130" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb7-131"><a href="#cb7-131" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
+<span id="cb7-132"><a href="#cb7-132" aria-hidden="true" tabindex="-1"></a><span class="fu">parameters</span>(m3) <span class="sc">|&gt;</span> <span class="fu">print_md</span>()</span>
+<span id="cb7-133"><a href="#cb7-133" aria-hidden="true" tabindex="-1"></a><span class="fu">parameters</span>(m3) <span class="sc">|&gt;</span> <span class="fu">plot</span>()</span>
+<span id="cb7-134"><a href="#cb7-134" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb7-135"><a href="#cb7-135" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-136"><a href="#cb7-136" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-137"><a href="#cb7-137" aria-hidden="true" tabindex="-1"></a>Parameter m4:</span>
-<span id="cb7-138"><a href="#cb7-138" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-141"><a href="#cb7-141" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb7-142"><a href="#cb7-142" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
-<span id="cb7-143"><a href="#cb7-143" aria-hidden="true" tabindex="-1"></a><span class="fu">parameters</span>(m4) <span class="sc">|&gt;</span> <span class="fu">print_md</span>()</span>
-<span id="cb7-144"><a href="#cb7-144" aria-hidden="true" tabindex="-1"></a><span class="fu">parameters</span>(m4) <span class="sc">|&gt;</span> <span class="fu">plot</span>()</span>
-<span id="cb7-145"><a href="#cb7-145" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb7-146"><a href="#cb7-146" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-137"><a href="#cb7-137" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-138"><a href="#cb7-138" aria-hidden="true" tabindex="-1"></a>Parameter m4:</span>
+<span id="cb7-139"><a href="#cb7-139" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-142"><a href="#cb7-142" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb7-143"><a href="#cb7-143" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
+<span id="cb7-144"><a href="#cb7-144" aria-hidden="true" tabindex="-1"></a><span class="fu">parameters</span>(m4) <span class="sc">|&gt;</span> <span class="fu">print_md</span>()</span>
+<span id="cb7-145"><a href="#cb7-145" aria-hidden="true" tabindex="-1"></a><span class="fu">parameters</span>(m4) <span class="sc">|&gt;</span> <span class="fu">plot</span>()</span>
+<span id="cb7-146"><a href="#cb7-146" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb7-147"><a href="#cb7-147" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-148"><a href="#cb7-148" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">br</span><span class="dt">&gt;</span></span>
+<span id="cb7-148"><a href="#cb7-148" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-149"><a href="#cb7-149" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">br</span><span class="dt">&gt;</span></span>
 <span id="cb7-150"><a href="#cb7-150" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">br</span><span class="dt">&gt;</span></span>
-<span id="cb7-151"><a href="#cb7-151" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-152"><a href="#cb7-152" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">br</span><span class="dt">&gt;</span></span>
+<span id="cb7-151"><a href="#cb7-151" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">br</span><span class="dt">&gt;</span></span>
+<span id="cb7-152"><a href="#cb7-152" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-153"><a href="#cb7-153" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">br</span><span class="dt">&gt;</span></span>
 <span id="cb7-154"><a href="#cb7-154" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">br</span><span class="dt">&gt;</span></span>
-<span id="cb7-155"><a href="#cb7-155" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-156"><a href="#cb7-156" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">br</span><span class="dt">&gt;</span></span>
+<span id="cb7-155"><a href="#cb7-155" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">br</span><span class="dt">&gt;</span></span>
+<span id="cb7-156"><a href="#cb7-156" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-157"><a href="#cb7-157" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">br</span><span class="dt">&gt;</span></span>
 <span id="cb7-158"><a href="#cb7-158" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">br</span><span class="dt">&gt;</span></span>
-<span id="cb7-159"><a href="#cb7-159" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-160"><a href="#cb7-160" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">br</span><span class="dt">&gt;</span></span>
+<span id="cb7-159"><a href="#cb7-159" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">br</span><span class="dt">&gt;</span></span>
+<span id="cb7-160"><a href="#cb7-160" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-161"><a href="#cb7-161" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">br</span><span class="dt">&gt;</span></span>
 <span id="cb7-162"><a href="#cb7-162" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">br</span><span class="dt">&gt;</span></span>
-<span id="cb7-163"><a href="#cb7-163" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-163"><a href="#cb7-163" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">br</span><span class="dt">&gt;</span></span>
 <span id="cb7-164"><a href="#cb7-164" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-165"><a href="#cb7-165" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-166"><a href="#cb7-166" aria-hidden="true" tabindex="-1"></a></span>
@@ -1138,17 +1139,18 @@ $ year              &lt;int&gt; 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 
 <span id="cb7-171"><a href="#cb7-171" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-172"><a href="#cb7-172" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-173"><a href="#cb7-173" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-174"><a href="#cb7-174" aria-hidden="true" tabindex="-1"></a><span class="fu"># Lösung </span></span>
-<span id="cb7-175"><a href="#cb7-175" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-176"><a href="#cb7-176" aria-hidden="true" tabindex="-1"></a>Die Regressionsformel lautet: <span class="in">`body_mass_g ~ sex + bill_length_mm + sex:bill_length_mm`</span>.</span>
-<span id="cb7-177"><a href="#cb7-177" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-174"><a href="#cb7-174" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-175"><a href="#cb7-175" aria-hidden="true" tabindex="-1"></a><span class="fu"># Lösung </span></span>
+<span id="cb7-176"><a href="#cb7-176" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-177"><a href="#cb7-177" aria-hidden="true" tabindex="-1"></a>Die Regressionsformel lautet: <span class="in">`body_mass_g ~ sex + bill_length_mm + sex:bill_length_mm`</span>.</span>
 <span id="cb7-178"><a href="#cb7-178" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-179"><a href="#cb7-179" aria-hidden="true" tabindex="-1"></a>Daher ist m3 korrekt.</span>
-<span id="cb7-180"><a href="#cb7-180" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-181"><a href="#cb7-181" aria-hidden="true" tabindex="-1"></a>Die Parameterwerte von m3 zeigen, dass ein Interaktionseffekt nicht bestätigt werden kann, bzw. dass die Null, also keine Interaktion, im Bereich plausibler Werte (d.h. innerhalb des Konfidenzintervalls) liegt.</span>
-<span id="cb7-182"><a href="#cb7-182" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-179"><a href="#cb7-179" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-180"><a href="#cb7-180" aria-hidden="true" tabindex="-1"></a>Daher ist m3 korrekt.</span>
+<span id="cb7-181"><a href="#cb7-181" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-182"><a href="#cb7-182" aria-hidden="true" tabindex="-1"></a>Die Parameterwerte von m3 zeigen, dass ein Interaktionseffekt nicht bestätigt werden kann, bzw. dass die Null, also keine Interaktion, im Bereich plausibler Werte (d.h. innerhalb des Konfidenzintervalls) liegt.</span>
 <span id="cb7-183"><a href="#cb7-183" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-184"><a href="#cb7-184" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-185"><a href="#cb7-185" aria-hidden="true" tabindex="-1"></a></span>
 </code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->

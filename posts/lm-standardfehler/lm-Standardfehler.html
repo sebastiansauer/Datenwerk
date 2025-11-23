@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.31">
+<meta name="generator" content="quarto-1.7.32">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -72,10 +72,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-36228135ecc5ef07794e934de038b4b3.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-b985dc545f03a853cc00dfbebf9617fd.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -246,18 +246,18 @@ lm(formula = y ~ x, data = d)
 
 Residuals:
     Min      1Q  Median      3Q     Max 
--0.8758 -0.3004 -0.1946  0.2529  1.3000 
+-0.8473 -0.3360  0.0867  0.2621  0.6737 
 
 Coefficients:
             Estimate Std. Error t value Pr(&gt;|t|)    
-(Intercept)  -0.1422     0.1561  -0.911    0.378    
-x             0.9546     0.1317   7.251 4.22e-06 ***
+(Intercept)  -0.1081     0.1136  -0.951    0.358    
+x             0.9908     0.1394   7.106 5.29e-06 ***
 ---
 Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
-Residual standard error: 0.5976 on 14 degrees of freedom
-Multiple R-squared:  0.7897,    Adjusted R-squared:  0.7747 
-F-statistic: 52.58 on 1 and 14 DF,  p-value: 4.216e-06</code></pre>
+Residual standard error: 0.4379 on 14 degrees of freedom
+Multiple R-squared:  0.7829,    Adjusted R-squared:  0.7674 
+F-statistic:  50.5 on 1 and 14 DF,  p-value: 5.287e-06</code></pre>
 </div>
 </div>
 <p>Hier haben wir eine Tabelle mit zwei Variablen, x und y, definiert mit n=16.</p>
@@ -295,19 +295,19 @@ Call:
 lm(formula = y ~ x, data = d5)
 
 Residuals:
-     Min       1Q   Median       3Q      Max 
--0.68722 -0.43286 -0.07974  0.38128  1.62001 
+    Min      1Q  Median      3Q     Max 
+-0.8204 -0.3276 -0.0594  0.3072  0.9153 
 
 Coefficients:
             Estimate Std. Error t value Pr(&gt;|t|)    
-(Intercept) -0.07923    0.09254  -0.856    0.399    
-x            1.11837    0.11377   9.830 6.81e-11 ***
+(Intercept)  0.08478    0.08132   1.043    0.305    
+x            0.98617    0.11198   8.807 8.09e-10 ***
 ---
 Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
-Residual standard error: 0.5181 on 30 degrees of freedom
-Multiple R-squared:  0.7631,    Adjusted R-squared:  0.7552 
-F-statistic: 96.63 on 1 and 30 DF,  p-value: 6.812e-11</code></pre>
+Residual standard error: 0.4588 on 30 degrees of freedom
+Multiple R-squared:  0.7211,    Adjusted R-squared:  0.7118 
+F-statistic: 77.56 on 1 and 30 DF,  p-value: 8.087e-10</code></pre>
 </div>
 </div>
 <p>Man kann sich den Standardfehler komfortabler ausgeben lassen, wenn man das Paket <code>easystats</code> verwendet:</p>
@@ -325,7 +325,7 @@ F-statistic: 96.63 on 1 and 30 DF,  p-value: 6.812e-11</code></pre>
 <col style="width: 5%">
 <col style="width: 12%">
 <col style="width: 11%">
-<col style="width: 12%">
+<col style="width: 10%">
 <col style="width: 10%">
 <col style="width: 11%">
 </colgroup>
@@ -345,23 +345,23 @@ F-statistic: 96.63 on 1 and 30 DF,  p-value: 6.812e-11</code></pre>
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">(Intercept)</td>
-<td style="text-align: right;">-0.0792257</td>
-<td style="text-align: right;">0.0925390</td>
+<td style="text-align: right;">0.0847795</td>
+<td style="text-align: right;">0.0813190</td>
 <td style="text-align: right;">0.95</td>
-<td style="text-align: right;">-0.2682155</td>
-<td style="text-align: right;">0.1097641</td>
-<td style="text-align: right;">-0.8561335</td>
+<td style="text-align: right;">-0.0812961</td>
+<td style="text-align: right;">0.2508551</td>
+<td style="text-align: right;">1.042554</td>
 <td style="text-align: right;">30</td>
-<td style="text-align: right;">0.3987108</td>
+<td style="text-align: right;">0.3054839</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">x</td>
-<td style="text-align: right;">1.1183739</td>
-<td style="text-align: right;">0.1137728</td>
+<td style="text-align: right;">0.9861727</td>
+<td style="text-align: right;">0.1119792</td>
 <td style="text-align: right;">0.95</td>
-<td style="text-align: right;">0.8860189</td>
-<td style="text-align: right;">1.3507289</td>
-<td style="text-align: right;">9.8298902</td>
+<td style="text-align: right;">0.7574807</td>
+<td style="text-align: right;">1.2148646</td>
+<td style="text-align: right;">8.806752</td>
 <td style="text-align: right;">30</td>
 <td style="text-align: right;">0.0000000</td>
 </tr>
@@ -388,11 +388,11 @@ F-statistic: 96.63 on 1 and 30 DF,  p-value: 6.812e-11</code></pre>
 <colgroup>
 <col style="width: 13%">
 <col style="width: 13%">
-<col style="width: 10%">
+<col style="width: 11%">
 <col style="width: 5%">
 <col style="width: 12%">
 <col style="width: 11%">
-<col style="width: 11%">
+<col style="width: 12%">
 <col style="width: 10%">
 <col style="width: 11%">
 </colgroup>
@@ -412,23 +412,23 @@ F-statistic: 96.63 on 1 and 30 DF,  p-value: 6.812e-11</code></pre>
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">(Intercept)</td>
-<td style="text-align: right;">0.0179108</td>
-<td style="text-align: right;">0.075495</td>
+<td style="text-align: right;">-0.0389530</td>
+<td style="text-align: right;">0.0608241</td>
 <td style="text-align: right;">0.95</td>
-<td style="text-align: right;">-0.1330015</td>
-<td style="text-align: right;">0.1688232</td>
-<td style="text-align: right;">0.237245</td>
+<td style="text-align: right;">-0.1605386</td>
+<td style="text-align: right;">0.0826327</td>
+<td style="text-align: right;">-0.6404197</td>
 <td style="text-align: right;">62</td>
-<td style="text-align: right;">0.8132489</td>
+<td style="text-align: right;">0.5242597</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">x</td>
-<td style="text-align: right;">1.0192013</td>
-<td style="text-align: right;">0.070361</td>
+<td style="text-align: right;">0.9073131</td>
+<td style="text-align: right;">0.0624433</td>
 <td style="text-align: right;">0.95</td>
-<td style="text-align: right;">0.8785517</td>
-<td style="text-align: right;">1.1598509</td>
-<td style="text-align: right;">14.485316</td>
+<td style="text-align: right;">0.7824907</td>
+<td style="text-align: right;">1.0321355</td>
+<td style="text-align: right;">14.5301853</td>
 <td style="text-align: right;">62</td>
 <td style="text-align: right;">0.0000000</td>
 </tr>
@@ -478,23 +478,23 @@ F-statistic: 96.63 on 1 and 30 DF,  p-value: 6.812e-11</code></pre>
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">(Intercept)</td>
-<td style="text-align: right;">-0.0283003</td>
-<td style="text-align: right;">0.0418013</td>
+<td style="text-align: right;">0.0141756</td>
+<td style="text-align: right;">0.0468481</td>
 <td style="text-align: right;">0.95</td>
-<td style="text-align: right;">-0.1110239</td>
-<td style="text-align: right;">0.0544232</td>
-<td style="text-align: right;">-0.6770198</td>
+<td style="text-align: right;">-0.0785355</td>
+<td style="text-align: right;">0.1068866</td>
+<td style="text-align: right;">0.3025855</td>
 <td style="text-align: right;">126</td>
-<td style="text-align: right;">0.4996344</td>
+<td style="text-align: right;">0.7627048</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">x</td>
-<td style="text-align: right;">1.0038115</td>
-<td style="text-align: right;">0.0423511</td>
+<td style="text-align: right;">0.9129665</td>
+<td style="text-align: right;">0.0514853</td>
 <td style="text-align: right;">0.95</td>
-<td style="text-align: right;">0.9200000</td>
-<td style="text-align: right;">1.0876230</td>
-<td style="text-align: right;">23.7021619</td>
+<td style="text-align: right;">0.8110786</td>
+<td style="text-align: right;">1.0148544</td>
+<td style="text-align: right;">17.7325697</td>
 <td style="text-align: right;">126</td>
 <td style="text-align: right;">0.0000000</td>
 </tr>
@@ -524,7 +524,7 @@ F-statistic: 96.63 on 1 and 30 DF,  p-value: 6.812e-11</code></pre>
 <col style="width: 5%">
 <col style="width: 12%">
 <col style="width: 11%">
-<col style="width: 11%">
+<col style="width: 12%">
 <col style="width: 10%">
 <col style="width: 11%">
 </colgroup>
@@ -544,23 +544,23 @@ F-statistic: 96.63 on 1 and 30 DF,  p-value: 6.812e-11</code></pre>
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">(Intercept)</td>
-<td style="text-align: right;">0.0431977</td>
-<td style="text-align: right;">0.0290556</td>
+<td style="text-align: right;">-0.0193540</td>
+<td style="text-align: right;">0.0310668</td>
 <td style="text-align: right;">0.95</td>
-<td style="text-align: right;">-0.0140228</td>
-<td style="text-align: right;">0.1004182</td>
-<td style="text-align: right;">1.486728</td>
+<td style="text-align: right;">-0.0805353</td>
+<td style="text-align: right;">0.0418272</td>
+<td style="text-align: right;">-0.6229816</td>
 <td style="text-align: right;">254</td>
-<td style="text-align: right;">0.1383268</td>
+<td style="text-align: right;">0.5338556</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">x</td>
-<td style="text-align: right;">1.0565355</td>
-<td style="text-align: right;">0.0278379</td>
+<td style="text-align: right;">0.9076199</td>
+<td style="text-align: right;">0.0320783</td>
 <td style="text-align: right;">0.95</td>
-<td style="text-align: right;">1.0017129</td>
-<td style="text-align: right;">1.1113581</td>
-<td style="text-align: right;">37.953072</td>
+<td style="text-align: right;">0.8444467</td>
+<td style="text-align: right;">0.9707932</td>
+<td style="text-align: right;">28.2939271</td>
 <td style="text-align: right;">254</td>
 <td style="text-align: right;">0.0000000</td>
 </tr>
@@ -588,9 +588,9 @@ F-statistic: 96.63 on 1 and 30 DF,  p-value: 6.812e-11</code></pre>
 <col style="width: 13%">
 <col style="width: 11%">
 <col style="width: 5%">
+<col style="width: 12%">
 <col style="width: 11%">
-<col style="width: 11%">
-<col style="width: 10%">
+<col style="width: 12%">
 <col style="width: 10%">
 <col style="width: 11%">
 </colgroup>
@@ -610,23 +610,23 @@ F-statistic: 96.63 on 1 and 30 DF,  p-value: 6.812e-11</code></pre>
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">(Intercept)</td>
-<td style="text-align: right;">0.0508174</td>
-<td style="text-align: right;">0.0212192</td>
+<td style="text-align: right;">0.0086872</td>
+<td style="text-align: right;">0.0223631</td>
 <td style="text-align: right;">0.95</td>
-<td style="text-align: right;">0.0091296</td>
-<td style="text-align: right;">0.0925052</td>
-<td style="text-align: right;">2.39488</td>
+<td style="text-align: right;">-0.0352479</td>
+<td style="text-align: right;">0.0526223</td>
+<td style="text-align: right;">0.3884632</td>
 <td style="text-align: right;">510</td>
-<td style="text-align: right;">0.0169857</td>
+<td style="text-align: right;">0.6978354</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">x</td>
-<td style="text-align: right;">0.9834259</td>
-<td style="text-align: right;">0.0210561</td>
+<td style="text-align: right;">0.9998069</td>
+<td style="text-align: right;">0.0225113</td>
 <td style="text-align: right;">0.95</td>
-<td style="text-align: right;">0.9420586</td>
-<td style="text-align: right;">1.0247932</td>
-<td style="text-align: right;">46.70508</td>
+<td style="text-align: right;">0.9555805</td>
+<td style="text-align: right;">1.0440332</td>
+<td style="text-align: right;">44.4134720</td>
 <td style="text-align: right;">510</td>
 <td style="text-align: right;">0.0000000</td>
 </tr>
@@ -782,7 +782,7 @@ F-statistic: 96.63 on 1 and 30 DF,  p-value: 6.812e-11</code></pre>
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("https:\/\/sebastiansauer\.github\.io\/Datenwerk2\/");
+        var filterRegex = new RegExp("https:\/\/sebastiansauer\.github\.io\/datenwerk\/");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }

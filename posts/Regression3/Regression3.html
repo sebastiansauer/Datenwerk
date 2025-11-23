@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.31">
+<meta name="generator" content="quarto-1.7.32">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -72,10 +72,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-36228135ecc5ef07794e934de038b4b3.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-b985dc545f03a853cc00dfbebf9617fd.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -228,32 +228,32 @@ window.Quarto = {
 <p>Eine Forscherin berechnet ein Regressionsmodell mit einer metrischen AV <code>y</code> und einer metrischen UV <code>x</code>.</p>
 <p>Dazu kommt noch eine Gruppierungsvariable <span class="math inline">\(g\)</span> (mit den Stufen <code>0</code> und <code>1</code>). Das Modell lautet also: <code>y ~ x + g</code>.</p>
 <p>Das folgende Diagramm stellt das Modell dar (vgl. Farbe und Form der Punkte zur Darstellung von <code>g</code>).</p>
-<div class="cell">
+<div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div>
+<div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="Regression3_files/figure-html/plot-scatter-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="plot-scatter-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:75.0%" data-fig-pos="H"></p>
 </figure>
 </div>
 </div>
 </div>
 <p>Wählen Sie das (für die Population) am besten passende Modell aus der Liste aus!</p>
 <p><em>Hinweis</em>: Ein Interaktionseffekt der Variablen <span class="math inline">\(x\)</span> und <span class="math inline">\(g\)</span> ist mit <span class="math inline">\(xg\)</span> gekennzeichnet.</p>
-<section id="answerlist" class="level2">
+<section id="answerlist" class="level2 cell" data-layout-align="center">
 <h2 class="anchored" data-anchor-id="answerlist">Answerlist</h2>
 <ul>
-<li><span class="math inline">\(y = 40 + 10\cdot x + 40 \cdot g + 0 \cdot xg + \epsilon\)</span></li>
-<li><span class="math inline">\(y = -40 + -10\cdot x + 0 \cdot g + 0 \cdot xg + \epsilon\)</span></li>
-<li><span class="math inline">\(y = -40 + 10\cdot x + -40 \cdot g + 0 \cdot xg + \epsilon\)</span></li>
-<li><span class="math inline">\(y = -40 + -10\cdot x + -40 \cdot g + 0 \cdot xg + \epsilon\)</span></li>
+<li><span class="math inline">\(y = 40 + 10\cdot x + 0 \cdot g + 0 \cdot xg + \epsilon\)</span></li>
+<li><span class="math inline">\(y = 40 + 10\cdot x + -40 \cdot g + -10 \cdot xg + \epsilon\)</span></li>
+<li><span class="math inline">\(y = -40 + 10\cdot x + 0 \cdot g + -10 \cdot xg + \epsilon\)</span></li>
+<li><span class="math inline">\(y = -40 + -10\cdot x + 40 \cdot g + -10 \cdot xg + \epsilon\)</span></li>
 </ul>
-<p><br> <br> <br> <br> <br> <br> <br> <br> <br> <br></p>
 </section>
+<p><br> <br> <br> <br> <br> <br> <br> <br> <br> <br></p>
 </section>
 <section id="lösung" class="level1">
 <h1>Lösung</h1>
-<p>Der Modellfehler <span class="math inline">\(\epsilon\)</span> hat den Anteil <span class="math inline">\(0.05\)</span> im Vergleich zur Streuung von <span class="math inline">\(y\)</span>.</p>
-<section id="answerlist-1" class="level2">
+<p>Der Modellfehler <span class="math inline">\(\epsilon\)</span> hat den Anteil <span class="math inline">\(0.1\)</span> im Vergleich zur Streuung von <span class="math inline">\(y\)</span>.</p>
+<section id="answerlist-1" class="level2 cell" data-layout-align="center">
 <h2 class="anchored" data-anchor-id="answerlist-1">Answerlist</h2>
 <ul>
 <li>Falsch</li>
@@ -261,6 +261,7 @@ window.Quarto = {
 <li>Falsch</li>
 <li>Falsch</li>
 </ul>
+</section>
 <hr>
 <p>Categories:</p>
 <ul>
@@ -273,7 +274,6 @@ window.Quarto = {
 
 <!-- -->
 
-</section>
 </section>
 
 </main> <!-- /main -->
@@ -400,7 +400,7 @@ window.Quarto = {
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("https:\/\/sebastiansauer\.github\.io\/Datenwerk2\/");
+        var filterRegex = new RegExp("https:\/\/sebastiansauer\.github\.io\/datenwerk\/");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }

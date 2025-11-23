@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.31">
+<meta name="generator" content="quarto-1.7.32">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -72,10 +72,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-36228135ecc5ef07794e934de038b4b3.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-b985dc545f03a853cc00dfbebf9617fd.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -205,17 +205,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Global-mean monthly, seasonal, and annual means, 1880-present, updated through most recent month: TXT, CSV</p>
 </blockquote>
 <p>Starten Sie zunächst das R-Paket <code>tidyverse</code> falls noch nicht geschehen.</p>
-<div class="cell" data-layout-align="center">
+<div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Importieren Sie dann die Daten:</p>
-<div class="cell" data-layout-align="center">
+<div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>data_path <span class="ot">&lt;-</span> <span class="st">"https://data.giss.nasa.gov/gistemp/tabledata_v4/GLB.Ts+dSST.csv"</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>d <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(data_path, <span class="at">skip =</span> <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Oder von der eigenen Festplatte, wenn schon heruntergeladen:</p>
-<div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>d <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"/Users/sebastiansaueruser/datasets/nasa02.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>d <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="fu">paste0</span>(here<span class="sc">::</span><span class="fu">here</span>(),<span class="st">"/data/nasa02.csv"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Wir lassen die 1. Zeile des Datensatzes aus (Argument <code>skip</code>), da dort <em>Metadaten</em> stehen, also keine Daten, sondern Informationen (Daten) zu den eigentlichen Daten.</p>
 <p><strong>Aufgaben</strong></p>
@@ -232,13 +232,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="lösung" class="level1">
 <h1>Lösung</h1>
 <p>Dekade berechnen:</p>
-<div class="cell" data-layout-align="center">
+<div class="cell">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>d <span class="ot">&lt;-</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  d <span class="sc">%&gt;%</span> </span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">decade =</span> <span class="fu">round</span>(Year<span class="sc">/</span><span class="dv">10</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Korrelation:</p>
-<div class="cell" data-layout-align="center">
+<div class="cell">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>d <span class="sc">%&gt;%</span> </span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">temp_cor =</span> <span class="fu">cor</span>(Jan, Feb))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
@@ -259,31 +259,31 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>Korrelation pro Dekade:</p>
-<div class="cell" data-layout-align="center">
+<div class="cell">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>d_summarized <span class="ot">&lt;-</span> </span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  d <span class="sc">%&gt;%</span> </span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(decade) <span class="sc">%&gt;%</span> </span>
 <span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">temp_cor =</span> <span class="fu">cor</span>(Jan, Feb))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell" data-layout-align="center">
+<div class="cell">
 <div class="cell-output-display">
-<div id="wjrwvucjvn" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#wjrwvucjvn table {
+<div id="laeqzbdeqd" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#laeqzbdeqd table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#wjrwvucjvn thead, #wjrwvucjvn tbody, #wjrwvucjvn tfoot, #wjrwvucjvn tr, #wjrwvucjvn td, #wjrwvucjvn th {
+#laeqzbdeqd thead, #laeqzbdeqd tbody, #laeqzbdeqd tfoot, #laeqzbdeqd tr, #laeqzbdeqd td, #laeqzbdeqd th {
   border-style: none;
 }
 
-#wjrwvucjvn p {
+#laeqzbdeqd p {
   margin: 0;
   padding: 0;
 }
 
-#wjrwvucjvn .gt_table {
+#laeqzbdeqd .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -309,12 +309,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-left-color: #D3D3D3;
 }
 
-#wjrwvucjvn .gt_caption {
+#laeqzbdeqd .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#wjrwvucjvn .gt_title {
+#laeqzbdeqd .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -326,7 +326,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-width: 0;
 }
 
-#wjrwvucjvn .gt_subtitle {
+#laeqzbdeqd .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -338,7 +338,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-top-width: 0;
 }
 
-#wjrwvucjvn .gt_heading {
+#laeqzbdeqd .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -350,13 +350,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#wjrwvucjvn .gt_bottom_border {
+#laeqzbdeqd .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#wjrwvucjvn .gt_col_headings {
+#laeqzbdeqd .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -371,7 +371,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#wjrwvucjvn .gt_col_heading {
+#laeqzbdeqd .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -391,7 +391,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   overflow-x: hidden;
 }
 
-#wjrwvucjvn .gt_column_spanner_outer {
+#laeqzbdeqd .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -403,15 +403,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 4px;
 }
 
-#wjrwvucjvn .gt_column_spanner_outer:first-child {
+#laeqzbdeqd .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#wjrwvucjvn .gt_column_spanner_outer:last-child {
+#laeqzbdeqd .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#wjrwvucjvn .gt_column_spanner {
+#laeqzbdeqd .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -423,11 +423,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   width: 100%;
 }
 
-#wjrwvucjvn .gt_spanner_row {
+#laeqzbdeqd .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#wjrwvucjvn .gt_group_heading {
+#laeqzbdeqd .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -453,7 +453,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   text-align: left;
 }
 
-#wjrwvucjvn .gt_empty_group_heading {
+#laeqzbdeqd .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -468,15 +468,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   vertical-align: middle;
 }
 
-#wjrwvucjvn .gt_from_md > :first-child {
+#laeqzbdeqd .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#wjrwvucjvn .gt_from_md > :last-child {
+#laeqzbdeqd .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#wjrwvucjvn .gt_row {
+#laeqzbdeqd .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -495,7 +495,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   overflow-x: hidden;
 }
 
-#wjrwvucjvn .gt_stub {
+#laeqzbdeqd .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -508,7 +508,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#wjrwvucjvn .gt_stub_row_group {
+#laeqzbdeqd .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -522,15 +522,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   vertical-align: top;
 }
 
-#wjrwvucjvn .gt_row_group_first td {
+#laeqzbdeqd .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#wjrwvucjvn .gt_row_group_first th {
+#laeqzbdeqd .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#wjrwvucjvn .gt_summary_row {
+#laeqzbdeqd .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -540,16 +540,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#wjrwvucjvn .gt_first_summary_row {
+#laeqzbdeqd .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#wjrwvucjvn .gt_first_summary_row.thick {
+#laeqzbdeqd .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#wjrwvucjvn .gt_last_summary_row {
+#laeqzbdeqd .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -559,7 +559,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #D3D3D3;
 }
 
-#wjrwvucjvn .gt_grand_summary_row {
+#laeqzbdeqd .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -569,7 +569,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#wjrwvucjvn .gt_first_grand_summary_row {
+#laeqzbdeqd .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -579,7 +579,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-top-color: #D3D3D3;
 }
 
-#wjrwvucjvn .gt_last_grand_summary_row_top {
+#laeqzbdeqd .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -589,11 +589,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #D3D3D3;
 }
 
-#wjrwvucjvn .gt_striped {
+#laeqzbdeqd .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#wjrwvucjvn .gt_table_body {
+#laeqzbdeqd .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -602,7 +602,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #D3D3D3;
 }
 
-#wjrwvucjvn .gt_footnotes {
+#laeqzbdeqd .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -616,7 +616,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#wjrwvucjvn .gt_footnote {
+#laeqzbdeqd .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -625,7 +625,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#wjrwvucjvn .gt_sourcenotes {
+#laeqzbdeqd .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -639,7 +639,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#wjrwvucjvn .gt_sourcenote {
+#laeqzbdeqd .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -647,72 +647,72 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#wjrwvucjvn .gt_left {
+#laeqzbdeqd .gt_left {
   text-align: left;
 }
 
-#wjrwvucjvn .gt_center {
+#laeqzbdeqd .gt_center {
   text-align: center;
 }
 
-#wjrwvucjvn .gt_right {
+#laeqzbdeqd .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#wjrwvucjvn .gt_font_normal {
+#laeqzbdeqd .gt_font_normal {
   font-weight: normal;
 }
 
-#wjrwvucjvn .gt_font_bold {
+#laeqzbdeqd .gt_font_bold {
   font-weight: bold;
 }
 
-#wjrwvucjvn .gt_font_italic {
+#laeqzbdeqd .gt_font_italic {
   font-style: italic;
 }
 
-#wjrwvucjvn .gt_super {
+#laeqzbdeqd .gt_super {
   font-size: 65%;
 }
 
-#wjrwvucjvn .gt_footnote_marks {
+#laeqzbdeqd .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#wjrwvucjvn .gt_asterisk {
+#laeqzbdeqd .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#wjrwvucjvn .gt_indent_1 {
+#laeqzbdeqd .gt_indent_1 {
   text-indent: 5px;
 }
 
-#wjrwvucjvn .gt_indent_2 {
+#laeqzbdeqd .gt_indent_2 {
   text-indent: 10px;
 }
 
-#wjrwvucjvn .gt_indent_3 {
+#laeqzbdeqd .gt_indent_3 {
   text-indent: 15px;
 }
 
-#wjrwvucjvn .gt_indent_4 {
+#laeqzbdeqd .gt_indent_4 {
   text-indent: 20px;
 }
 
-#wjrwvucjvn .gt_indent_5 {
+#laeqzbdeqd .gt_indent_5 {
   text-indent: 25px;
 }
 
-#wjrwvucjvn .katex-display {
+#laeqzbdeqd .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#wjrwvucjvn div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#laeqzbdeqd div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -793,41 +793,41 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p>Zum Visualisieren gibt es viele Möglichkeiten. Wer kein Experte sein will, dem reicht es, eine Möglichkeit zu kennen.</p>
 <p>Hier ist eine Visualisierung mit Hilfe des R-Pakets <code>ggplot2</code>:</p>
-<div class="cell" data-layout-align="center">
+<div class="cell">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>d_summarized <span class="sc">%&gt;%</span> </span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> decade, <span class="at">y =</span> temp_cor)) <span class="sc">+</span></span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">color =</span> <span class="st">"darkblue"</span>) <span class="sc">+</span></span>
 <span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">alpha =</span> .<span class="dv">7</span>) <span class="sc">+</span></span>
 <span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
+<div>
 <figure class="figure">
-<p><img src="chunk-img/unnamed-chunk-8-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%" data-fig-pos="H"></p>
+<p><img src="nasa02_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 </div>
 <p>Alternativ können Sie zum Visualisieren der Daten z.B. das Paket <code>ggpubr</code> nutzen:</p>
-<div class="cell" data-layout-align="center">
+<div class="cell">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggpubr)</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggscatter</span>(d_summarized, <span class="at">x =</span> <span class="st">"decade"</span>, <span class="at">y =</span> <span class="st">"temp_cor"</span>, <span class="at">add =</span> <span class="st">"reg.line"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
+<div>
 <figure class="figure">
-<p><img src="chunk-img/unnamed-chunk-9-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%" data-fig-pos="H"></p>
+<p><img src="nasa02_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 </div>
 <p>Oder mit dem R-Paket <code>DataExplorer</code>:</p>
-<div class="cell" data-layout-align="center">
+<div class="cell">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(DataExplorer)</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>d_summarized <span class="sc">|&gt;</span> </span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">plot_scatterplot</span>(<span class="at">by =</span> <span class="st">"temp_cor"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
+<div>
 <figure class="figure">
-<p><img src="chunk-img/unnamed-chunk-10-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%" data-fig-pos="H"></p>
+<p><img src="nasa02_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -972,7 +972,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("https:\/\/sebastiansauer\.github\.io\/Datenwerk2\/");
+        var filterRegex = new RegExp("https:\/\/sebastiansauer\.github\.io\/datenwerk\/");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
@@ -1375,7 +1375,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb10-74"><a href="#cb10-74" aria-hidden="true" tabindex="-1"></a>Oder von der eigenen Festplatte, wenn schon heruntergeladen:</span>
 <span id="cb10-75"><a href="#cb10-75" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-78"><a href="#cb10-78" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb10-79"><a href="#cb10-79" aria-hidden="true" tabindex="-1"></a>d <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"/Users/sebastiansaueruser/datasets/nasa02.csv"</span>)</span>
+<span id="cb10-79"><a href="#cb10-79" aria-hidden="true" tabindex="-1"></a>d <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="fu">paste0</span>(here<span class="sc">::</span><span class="fu">here</span>(),<span class="st">"/data/nasa02.csv"</span>))</span>
 <span id="cb10-80"><a href="#cb10-80" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb10-81"><a href="#cb10-81" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-82"><a href="#cb10-82" aria-hidden="true" tabindex="-1"></a></span>

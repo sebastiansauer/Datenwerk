@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.31">
+<meta name="generator" content="quarto-1.7.32">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -72,10 +72,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-36228135ecc5ef07794e934de038b4b3.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-b985dc545f03a853cc00dfbebf9617fd.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -201,22 +201,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell-output cell-output-stdout">
 <pre><code>
 Call:
-lm(formula = log(y) ~ x, data = d)
+lm(formula = y ~ x, data = d)
 
 Residuals:
      Min       1Q   Median       3Q      Max 
--1.97394 -0.81203 -0.04712  0.76554  2.89696 
+-0.96575 -0.43779 -0.03434  0.36210  1.26604 
 
 Coefficients:
             Estimate Std. Error t value Pr(&gt;|t|)    
-(Intercept)   0.0977     0.1617   0.604    0.549    
-x            -0.9517     0.1631  -5.833 6.39e-07 ***
+(Intercept) -0.06973    0.05877  -1.186    0.239    
+x            1.91739    0.05715  33.553   &lt;2e-16 ***
 ---
 Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
-Residual standard error: 1.084 on 43 degrees of freedom
-Multiple R-squared:  0.4418,    Adjusted R-squared:  0.4288 
-F-statistic: 34.03 on 1 and 43 DF,  p-value: 6.389e-07</code></pre>
+Residual standard error: 0.5288 on 79 degrees of freedom
+Multiple R-squared:  0.9344,    Adjusted R-squared:  0.9336 
+F-statistic:  1126 on 1 and 79 DF,  p-value: &lt; 2.2e-16</code></pre>
 </div>
 </div>
 <p>Zusammengefasst sind die Koeffizienten (beta0 und beta1) also:</p>
@@ -224,18 +224,18 @@ F-statistic: 34.03 on 1 and 43 DF,  p-value: 6.389e-07</code></pre>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">coef</span>(m)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>(Intercept)           x 
- 0.09769633 -0.95169074 </code></pre>
+-0.06972762  1.91738732 </code></pre>
 </div>
 </div>
 <p>Welche der folgenden Aussagen ist korrekt?</p>
 <section id="answerlist" class="level2">
 <h2 class="anchored" data-anchor-id="answerlist">Answerlist</h2>
 <ul>
+<li>Wenn <code>x=1</code>, dann ist ein Mittelwert von <code>y</code> in Höhe von ca. 1.85 zu erwarten.</li>
+<li>Es handelt sich um eine y-logarithmisierte Regression.</li>
 <li>Der Mittelwert der abhängigen Variaben <code>y</code> sinkt mit zunehmenden <code>x</code>.</li>
-<li>Wenn <code>x</code> um 1 Einheit steigt, dann kann eine Veränderung um etwa 10.26 Prozent in <code>y</code> erwartet werden.</li>
-<li>Wenn <code>x=0</code>, dann ist ein Mittelwert von <code>y</code> in Höhe von etwa -0.85 zu erwarten.</li>
-<li>Wenn <code>x=1</code>, dann ist ein Mittelwert von <code>y</code> in Höhe von ca. 0.1 zu erwarten.</li>
-<li>Wenn <code>x=2</code>, dann ist ein Mittelwert von <code>y</code> in Höhe von ca. -0.85 zu erwarten.</li>
+<li>Wenn <code>x</code> um 1 Einheit steigt, dann kann eine Veränderung um etwa -0.07 Einheiten in <code>y</code> erwartet werden.</li>
+<li>Wenn <code>x=0</code>, dann ist ein Mittelwert von <code>y</code> in Höhe von etwa 1.85 zu erwarten.</li>
 </ul>
 <p><br> <br> <br> <br> <br> <br> <br> <br> <br> <br></p>
 </section>
@@ -390,7 +390,7 @@ F-statistic: 34.03 on 1 and 43 DF,  p-value: 6.389e-07</code></pre>
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("https:\/\/sebastiansauer\.github\.io\/Datenwerk2\/");
+        var filterRegex = new RegExp("https:\/\/sebastiansauer\.github\.io\/datenwerk\/");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }

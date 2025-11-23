@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.31">
+<meta name="generator" content="quarto-1.7.32">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -72,10 +72,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-36228135ecc5ef07794e934de038b4b3.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-b985dc545f03a853cc00dfbebf9617fd.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -224,7 +224,7 @@ window.Quarto = {
 <!-- This exercise is based on the R/exams exercise compilations. -->
 <section id="aufgabe" class="level1">
 <h1>Aufgabe</h1>
-<p>Ein renommiertes Unternehmen sucht einen Kandidaten für eine (hoch dotierte) Führungsposition. Ein Managementberatungsunternehmung führt ein Assessmentcenter durch, welches pro Kandidat/in eine positive bzw. negative Empfehlung ergibt. Aus früheren Erfahrungen heraus wissen die Berater, dass die tatsächlich geeigneten Kandidaten (Ereignis <span class="math inline">\(E\)</span> wie <em>eligible</em>) mit <span class="math inline">\(74\%\)</span> eine positive Empfehlung für die Stelle ausgesprochen bekommen (Ereignis <span class="math inline">\(R\)</span> wie <em>recommendation</em>). Weiterhin bekommen von den <em>nicht</em> geeigneten Kandidaten <span class="math inline">\(60\%\)</span> eine negative Empfehlung. Insgesamt wissen die Berater, dass <span class="math inline">\(10\%\)</span> der Bewerber/innen tatsächlich geeignet sind.</p>
+<p>Ein renommiertes Unternehmen sucht einen Kandidaten für eine (hoch dotierte) Führungsposition. Ein Managementberatungsunternehmung führt ein Assessmentcenter durch, welches pro Kandidat/in eine positive bzw. negative Empfehlung ergibt. Aus früheren Erfahrungen heraus wissen die Berater, dass die tatsächlich geeigneten Kandidaten (Ereignis <span class="math inline">\(E\)</span> wie <em>eligible</em>) mit <span class="math inline">\(79\%\)</span> eine positive Empfehlung für die Stelle ausgesprochen bekommen (Ereignis <span class="math inline">\(R\)</span> wie <em>recommendation</em>). Weiterhin bekommen von den <em>nicht</em> geeigneten Kandidaten <span class="math inline">\(75\%\)</span> eine negative Empfehlung. Insgesamt wissen die Berater, dass <span class="math inline">\(8\%\)</span> der Bewerber/innen tatsächlich geeignet sind.</p>
 <p><strong>Aufgabe:</strong> Was ist die entsprechende Häufigkeitstabelle? Geben Sie alle vier Einträge in Prozent an!</p>
 <p><em>Hinweis</em>: Das Gegenereignis vom Ereignis <span class="math inline">\(A\)</span> wird als Komplementärereignis oder kurz als Komplement bezeichnet und mit <span class="math inline">\(A^C\)</span> oder <span class="math inline">\(\overline{A}\)</span> abgekürzt. Im vorliegenden Fall meint <span class="math inline">\(\overline{R}=R^C\)</span> das Ereignis, dass ein Kandidat <em>keine</em> Empfehlung ausgesprochen bekommt.</p>
 <section id="answerlist" class="level2">
@@ -244,9 +244,9 @@ window.Quarto = {
 <p><span class="math display">\[
 \begin{aligned}
   P(E \cap R) &amp; =
-    P(R | E) \cdot P(E) = 0.74 \cdot 0.1 = 0.074 = 7.4\%\\
+    P(R | E) \cdot P(E) = 0.79 \cdot 0.08 = 0.0632 = 6.32\%\\
   P(\overline{E} \cap \overline{R}) &amp; =
-    P(\overline{R} | \overline{E}) \cdot P(\overline{E}) = 0.6 \cdot 0.9 = 0.54 = 54\%.
+    P(\overline{R} | \overline{E}) \cdot P(\overline{E}) = 0.75 \cdot 0.92 = 0.69 = 69\%.
 \end{aligned}
 \]</span></p>
 <p>Die restlichen gemeinsamen Wahrscheinlichkeiten lassen sich durch Addieren und Subtrahieren in der Kontingenztabelle errechnen:</p>
@@ -268,20 +268,20 @@ window.Quarto = {
 <tbody>
 <tr class="odd">
 <td style="text-align: center;"><span class="math inline">\(E\)</span></td>
-<td style="text-align: center;"><strong>7.40</strong></td>
-<td style="text-align: center;"><em>2.60</em></td>
-<td style="text-align: center;"><strong>10.00</strong></td>
+<td style="text-align: center;"><strong>6.32</strong></td>
+<td style="text-align: center;"><em>1.68</em></td>
+<td style="text-align: center;"><strong>8.00</strong></td>
 </tr>
 <tr class="even">
 <td style="text-align: center;"><span class="math inline">\(\overline{E}\)</span></td>
-<td style="text-align: center;"><em>36.00</em></td>
-<td style="text-align: center;"><strong>54.00</strong></td>
-<td style="text-align: center;"><em>90.00</em></td>
+<td style="text-align: center;"><em>23.00</em></td>
+<td style="text-align: center;"><strong>69.00</strong></td>
+<td style="text-align: center;"><em>92.00</em></td>
 </tr>
 <tr class="odd">
 <td style="text-align: center;">Summe</td>
-<td style="text-align: center;"><em>43.40</em></td>
-<td style="text-align: center;"><em>56.60</em></td>
+<td style="text-align: center;"><em>29.32</em></td>
+<td style="text-align: center;"><em>70.68</em></td>
 <td style="text-align: center;"><strong>100.00</strong></td>
 </tr>
 </tbody>
@@ -289,10 +289,10 @@ window.Quarto = {
 <section id="answerlist-1" class="level2">
 <h2 class="anchored" data-anchor-id="answerlist-1">Answerlist</h2>
 <ul>
-<li><span class="math inline">\(P(E \cap R) =  7.4\%\)</span></li>
-<li><span class="math inline">\(P(\overline{E} \cap R) = 36.0\%\)</span></li>
-<li><span class="math inline">\(P(E \cap \overline{R}) =  2.6\%\)</span></li>
-<li><span class="math inline">\(P(\overline{E} \cap \overline{R}) = 54.0\%\)</span></li>
+<li><span class="math inline">\(P(E \cap R) =  6.32\%\)</span></li>
+<li><span class="math inline">\(P(\overline{E} \cap R) = 23.00\%\)</span></li>
+<li><span class="math inline">\(P(E \cap \overline{R}) =  1.68\%\)</span></li>
+<li><span class="math inline">\(P(\overline{E} \cap \overline{R}) = 69.00\%\)</span></li>
 </ul>
 <hr>
 <p>Categories:</p>
@@ -432,7 +432,7 @@ window.Quarto = {
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("https:\/\/sebastiansauer\.github\.io\/Datenwerk2\/");
+        var filterRegex = new RegExp("https:\/\/sebastiansauer\.github\.io\/datenwerk\/");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }

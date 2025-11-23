@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.31">
+<meta name="generator" content="quarto-1.7.32">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -72,10 +72,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-36228135ecc5ef07794e934de038b4b3.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-b985dc545f03a853cc00dfbebf9617fd.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -266,28 +266,28 @@ lm(formula = .outcome ~ ., data = dat)
 
 Residuals:
     Min      1Q  Median      3Q     Max 
--2.0953 -0.4702 -0.2033  0.1599 29.2400 
+-2.1042 -0.4709 -0.2033  0.1603 25.5524 
 
 Coefficients: (1 not defined because of singularities)
                  Estimate Std. Error  t value Pr(&gt;|t|)    
-(Intercept)    -0.0009503  0.0017921   -0.530   0.5959    
-month          -0.0017658  0.0017979   -0.982   0.3260    
-day             0.0009082  0.0017928    0.507   0.6124    
-dep_time        0.8225147  0.0062273  132.081   &lt;2e-16 ***
-sched_dep_time -0.5863701  0.0441450  -13.283   &lt;2e-16 ***
-arr_time       -0.2787396  0.0029549  -94.332   &lt;2e-16 ***
-sched_arr_time  0.0968838  0.0036361   26.645   &lt;2e-16 ***
-flight          0.0385112  0.0020520   18.768   &lt;2e-16 ***
-air_time        1.4220104  0.0132370  107.427   &lt;2e-16 ***
-distance       -1.4407468  0.0132872 -108.431   &lt;2e-16 ***
-hour            0.0802044  0.0435578    1.841   0.0656 .  
+(Intercept)    -0.0007497  0.0017917   -0.418   0.6756    
+month          -0.0034095  0.0017962   -1.898   0.0577 .  
+day             0.0012349  0.0017926    0.689   0.4909    
+dep_time        0.8202653  0.0062174  131.931   &lt;2e-16 ***
+sched_dep_time -0.5779739  0.0441023  -13.105   &lt;2e-16 ***
+arr_time       -0.2858576  0.0029590  -96.606   &lt;2e-16 ***
+sched_arr_time  0.1007779  0.0036324   27.744   &lt;2e-16 ***
+flight          0.0379100  0.0020521   18.474   &lt;2e-16 ***
+air_time        1.4113100  0.0132354  106.631   &lt;2e-16 ***
+distance       -1.4310097  0.0132839 -107.725   &lt;2e-16 ***
+hour            0.0758523  0.0435190    1.743   0.0813 .  
 minute                 NA         NA       NA       NA    
 ---
 Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
-Residual standard error: 0.9171 on 261866 degrees of freedom
-Multiple R-squared:  0.1515,    Adjusted R-squared:  0.1514 
-F-statistic:  4675 on 10 and 261866 DF,  p-value: &lt; 2.2e-16</code></pre>
+Residual standard error: 0.9169 on 261866 degrees of freedom
+Multiple R-squared:  0.1518,    Adjusted R-squared:  0.1517 
+F-statistic:  4686 on 10 and 261866 DF,  p-value: &lt; 2.2e-16</code></pre>
 </div>
 </div>
 <p>Im Folgenden untersucht sie die prädiktive Güte am Testdatensatz.</p>
@@ -298,7 +298,7 @@ F-statistic:  4675 on 10 and 261866 DF,  p-value: &lt; 2.2e-16</code></pre>
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>lm1_pred_fit</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>     RMSE  Rsquared       MAE 
-0.9372781 0.1516473 0.5521067 </code></pre>
+0.9379528 0.1505010 0.5530995 </code></pre>
 </div>
 </div>
 <p>Schließlich berechnet sie noch ein Random-Forest-Modell. Um Zeit zu sparen, verringert sie den Datensatz in dieser ersten Analyse.</p>
@@ -322,7 +322,7 @@ F-statistic:  4675 on 10 and 261866 DF,  p-value: &lt; 2.2e-16</code></pre>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>rf1_pred_fit</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>     RMSE  Rsquared       MAE 
-0.6001004 0.7181543 0.3510000 </code></pre>
+0.5491351 0.7639776 0.3330176 </code></pre>
 </div>
 </div>
 <ol type="a">
@@ -509,7 +509,7 @@ F-statistic:  4675 on 10 and 261866 DF,  p-value: &lt; 2.2e-16</code></pre>
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("https:\/\/sebastiansauer\.github\.io\/Datenwerk2\/");
+        var filterRegex = new RegExp("https:\/\/sebastiansauer\.github\.io\/datenwerk\/");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
@@ -849,27 +849,27 @@ F-statistic:  4675 on 10 and 261866 DF,  p-value: &lt; 2.2e-16</code></pre>
 <span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> '2023-05-17'</span></span>
 <span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a><span class="an">slug:</span><span class="co"> nyc_casestudy</span></span>
 <span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> nyc_casestudy</span></span>
-<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a><span class="an">execute:</span><span class="co"> </span></span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a><span class="co">  eval: true</span></span>
+<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
 <span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-19"><a href="#cb9-19" aria-hidden="true" tabindex="-1"></a><span class="in">```{r libs, include = FALSE}</span></span>
-<span id="cb9-20"><a href="#cb9-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-21"><a href="#cb9-21" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb9-22"><a href="#cb9-22" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(mosaic)</span>
-<span id="cb9-23"><a href="#cb9-23" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-24"><a href="#cb9-24" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb9-25"><a href="#cb9-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-19"><a href="#cb9-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-20"><a href="#cb9-20" aria-hidden="true" tabindex="-1"></a><span class="in">```{r libs, include = FALSE}</span></span>
+<span id="cb9-21"><a href="#cb9-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-22"><a href="#cb9-22" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb9-23"><a href="#cb9-23" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(mosaic)</span>
+<span id="cb9-24"><a href="#cb9-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-25"><a href="#cb9-25" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb9-26"><a href="#cb9-26" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-27"><a href="#cb9-27" aria-hidden="true" tabindex="-1"></a><span class="in">```{r global-knitr-options, include=FALSE}</span></span>
-<span id="cb9-28"><a href="#cb9-28" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span>opts_chunk<span class="sc">$</span><span class="fu">set</span>(<span class="at">fig.pos =</span> <span class="st">'H'</span>,</span>
-<span id="cb9-29"><a href="#cb9-29" aria-hidden="true" tabindex="-1"></a>                      <span class="at">fig.asp =</span> <span class="fl">0.618</span>,</span>
-<span id="cb9-30"><a href="#cb9-30" aria-hidden="true" tabindex="-1"></a>                      <span class="at">fig.width =</span> <span class="dv">4</span>,</span>
-<span id="cb9-31"><a href="#cb9-31" aria-hidden="true" tabindex="-1"></a>                      <span class="at">fig.cap =</span> <span class="st">""</span>, </span>
-<span id="cb9-32"><a href="#cb9-32" aria-hidden="true" tabindex="-1"></a>                      <span class="at">fig.path =</span> <span class="st">""</span>)</span>
-<span id="cb9-33"><a href="#cb9-33" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb9-34"><a href="#cb9-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-27"><a href="#cb9-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-28"><a href="#cb9-28" aria-hidden="true" tabindex="-1"></a><span class="in">```{r global-knitr-options, include=FALSE}</span></span>
+<span id="cb9-29"><a href="#cb9-29" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span>opts_chunk<span class="sc">$</span><span class="fu">set</span>(<span class="at">fig.pos =</span> <span class="st">'H'</span>,</span>
+<span id="cb9-30"><a href="#cb9-30" aria-hidden="true" tabindex="-1"></a>                      <span class="at">fig.asp =</span> <span class="fl">0.618</span>,</span>
+<span id="cb9-31"><a href="#cb9-31" aria-hidden="true" tabindex="-1"></a>                      <span class="at">fig.width =</span> <span class="dv">4</span>,</span>
+<span id="cb9-32"><a href="#cb9-32" aria-hidden="true" tabindex="-1"></a>                      <span class="at">fig.cap =</span> <span class="st">""</span>, </span>
+<span id="cb9-33"><a href="#cb9-33" aria-hidden="true" tabindex="-1"></a>                      <span class="at">fig.path =</span> <span class="st">""</span>)</span>
+<span id="cb9-34"><a href="#cb9-34" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb9-35"><a href="#cb9-35" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb9-36"><a href="#cb9-36" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb9-37"><a href="#cb9-37" aria-hidden="true" tabindex="-1"></a></span>
@@ -878,104 +878,104 @@ F-statistic:  4675 on 10 and 261866 DF,  p-value: &lt; 2.2e-16</code></pre>
 <span id="cb9-40"><a href="#cb9-40" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb9-41"><a href="#cb9-41" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb9-42"><a href="#cb9-42" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-43"><a href="#cb9-43" aria-hidden="true" tabindex="-1"></a><span class="fu"># Aufgabe</span></span>
-<span id="cb9-44"><a href="#cb9-44" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-43"><a href="#cb9-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-44"><a href="#cb9-44" aria-hidden="true" tabindex="-1"></a><span class="fu"># Aufgabe</span></span>
 <span id="cb9-45"><a href="#cb9-45" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-46"><a href="#cb9-46" aria-hidden="true" tabindex="-1"></a>Fallstudie </span>
-<span id="cb9-47"><a href="#cb9-47" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-46"><a href="#cb9-46" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-47"><a href="#cb9-47" aria-hidden="true" tabindex="-1"></a>Fallstudie </span>
 <span id="cb9-48"><a href="#cb9-48" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-49"><a href="#cb9-49" aria-hidden="true" tabindex="-1"></a>Eine Analystin untersucht Verspätungen der New Yorker Flüge. Sie gibt folgenden Code ein und erhält unten stehendes Ergebnis.</span>
-<span id="cb9-50"><a href="#cb9-50" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-49"><a href="#cb9-49" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-50"><a href="#cb9-50" aria-hidden="true" tabindex="-1"></a>Eine Analystin untersucht Verspätungen der New Yorker Flüge. Sie gibt folgenden Code ein und erhält unten stehendes Ergebnis.</span>
 <span id="cb9-51"><a href="#cb9-51" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-52"><a href="#cb9-52" aria-hidden="true" tabindex="-1"></a><span class="in">```{r ex-setup, message=FALSE}</span></span>
-<span id="cb9-53"><a href="#cb9-53" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sjmisc)</span>
-<span id="cb9-54"><a href="#cb9-54" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb9-55"><a href="#cb9-55" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(caret)</span>
-<span id="cb9-56"><a href="#cb9-56" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(flights, <span class="at">package =</span> <span class="st">"nycflights13"</span>)</span>
-<span id="cb9-57"><a href="#cb9-57" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-58"><a href="#cb9-58" aria-hidden="true" tabindex="-1"></a>my_crossval <span class="ot">&lt;-</span> <span class="fu">trainControl</span>(<span class="at">method =</span> <span class="st">"cv"</span>,</span>
-<span id="cb9-59"><a href="#cb9-59" aria-hidden="true" tabindex="-1"></a>                            <span class="at">number =</span> <span class="dv">5</span>,</span>
-<span id="cb9-60"><a href="#cb9-60" aria-hidden="true" tabindex="-1"></a>                            <span class="at">allowParallel =</span> <span class="cn">TRUE</span>,</span>
-<span id="cb9-61"><a href="#cb9-61" aria-hidden="true" tabindex="-1"></a>                            <span class="at">verboseIter =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb9-62"><a href="#cb9-62" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-63"><a href="#cb9-63" aria-hidden="true" tabindex="-1"></a>doMC<span class="sc">::</span><span class="fu">registerDoMC</span>(<span class="at">cores =</span> <span class="dv">2</span>)</span>
-<span id="cb9-64"><a href="#cb9-64" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-52"><a href="#cb9-52" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-53"><a href="#cb9-53" aria-hidden="true" tabindex="-1"></a><span class="in">```{r ex-setup, message=FALSE}</span></span>
+<span id="cb9-54"><a href="#cb9-54" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sjmisc)</span>
+<span id="cb9-55"><a href="#cb9-55" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb9-56"><a href="#cb9-56" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(caret)</span>
+<span id="cb9-57"><a href="#cb9-57" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(flights, <span class="at">package =</span> <span class="st">"nycflights13"</span>)</span>
+<span id="cb9-58"><a href="#cb9-58" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-59"><a href="#cb9-59" aria-hidden="true" tabindex="-1"></a>my_crossval <span class="ot">&lt;-</span> <span class="fu">trainControl</span>(<span class="at">method =</span> <span class="st">"cv"</span>,</span>
+<span id="cb9-60"><a href="#cb9-60" aria-hidden="true" tabindex="-1"></a>                            <span class="at">number =</span> <span class="dv">5</span>,</span>
+<span id="cb9-61"><a href="#cb9-61" aria-hidden="true" tabindex="-1"></a>                            <span class="at">allowParallel =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb9-62"><a href="#cb9-62" aria-hidden="true" tabindex="-1"></a>                            <span class="at">verboseIter =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb9-63"><a href="#cb9-63" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-64"><a href="#cb9-64" aria-hidden="true" tabindex="-1"></a>doMC<span class="sc">::</span><span class="fu">registerDoMC</span>(<span class="at">cores =</span> <span class="dv">2</span>)</span>
 <span id="cb9-65"><a href="#cb9-65" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-66"><a href="#cb9-66" aria-hidden="true" tabindex="-1"></a>flights2 <span class="ot">&lt;-</span> flights <span class="sc">%&gt;%</span></span>
-<span id="cb9-67"><a href="#cb9-67" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select_if</span>(is.numeric) <span class="sc">%&gt;%</span> </span>
-<span id="cb9-68"><a href="#cb9-68" aria-hidden="true" tabindex="-1"></a>  <span class="fu">drop_na</span>() <span class="sc">%&gt;%</span> </span>
-<span id="cb9-69"><a href="#cb9-69" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span><span class="fu">c</span>(year, dep_delay)) <span class="sc">%&gt;%</span> </span>
-<span id="cb9-70"><a href="#cb9-70" aria-hidden="true" tabindex="-1"></a>  <span class="fu">std</span>(<span class="at">suffix =</span> <span class="st">""</span>)  </span>
-<span id="cb9-71"><a href="#cb9-71" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-72"><a href="#cb9-72" aria-hidden="true" tabindex="-1"></a>n_uebung <span class="ot">&lt;-</span> <span class="fu">round</span>(.<span class="dv">8</span> <span class="sc">*</span> <span class="fu">nrow</span>(flights2), <span class="at">digits =</span> <span class="dv">0</span>)</span>
-<span id="cb9-73"><a href="#cb9-73" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-74"><a href="#cb9-74" aria-hidden="true" tabindex="-1"></a>uebung_index <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="fu">nrow</span>(flights2), <span class="at">size =</span> n_uebung)</span>
-<span id="cb9-75"><a href="#cb9-75" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-76"><a href="#cb9-76" aria-hidden="true" tabindex="-1"></a>uebung_df <span class="ot">&lt;-</span> <span class="fu">filter</span>(flights2, <span class="fu">row_number</span>() <span class="sc">%in%</span> uebung_index)</span>
-<span id="cb9-77"><a href="#cb9-77" aria-hidden="true" tabindex="-1"></a>test_df <span class="ot">&lt;-</span> <span class="fu">filter</span>(flights2, <span class="sc">!</span>(<span class="fu">row_number</span>() <span class="sc">%in%</span> uebung_index))</span>
-<span id="cb9-78"><a href="#cb9-78" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-79"><a href="#cb9-79" aria-hidden="true" tabindex="-1"></a>lm_fit1 <span class="ot">&lt;-</span> <span class="fu">train</span>(arr_delay <span class="sc">~</span> .,</span>
-<span id="cb9-80"><a href="#cb9-80" aria-hidden="true" tabindex="-1"></a>                 <span class="at">data =</span> uebung_df,</span>
-<span id="cb9-81"><a href="#cb9-81" aria-hidden="true" tabindex="-1"></a>                 <span class="at">method =</span> <span class="st">"lm"</span>,</span>
-<span id="cb9-82"><a href="#cb9-82" aria-hidden="true" tabindex="-1"></a>                 <span class="at">trControl =</span> my_crossval)</span>
-<span id="cb9-83"><a href="#cb9-83" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-84"><a href="#cb9-84" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(lm_fit1)</span>
-<span id="cb9-85"><a href="#cb9-85" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb9-86"><a href="#cb9-86" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-66"><a href="#cb9-66" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-67"><a href="#cb9-67" aria-hidden="true" tabindex="-1"></a>flights2 <span class="ot">&lt;-</span> flights <span class="sc">%&gt;%</span></span>
+<span id="cb9-68"><a href="#cb9-68" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select_if</span>(is.numeric) <span class="sc">%&gt;%</span> </span>
+<span id="cb9-69"><a href="#cb9-69" aria-hidden="true" tabindex="-1"></a>  <span class="fu">drop_na</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb9-70"><a href="#cb9-70" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span><span class="fu">c</span>(year, dep_delay)) <span class="sc">%&gt;%</span> </span>
+<span id="cb9-71"><a href="#cb9-71" aria-hidden="true" tabindex="-1"></a>  <span class="fu">std</span>(<span class="at">suffix =</span> <span class="st">""</span>)  </span>
+<span id="cb9-72"><a href="#cb9-72" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-73"><a href="#cb9-73" aria-hidden="true" tabindex="-1"></a>n_uebung <span class="ot">&lt;-</span> <span class="fu">round</span>(.<span class="dv">8</span> <span class="sc">*</span> <span class="fu">nrow</span>(flights2), <span class="at">digits =</span> <span class="dv">0</span>)</span>
+<span id="cb9-74"><a href="#cb9-74" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-75"><a href="#cb9-75" aria-hidden="true" tabindex="-1"></a>uebung_index <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="fu">nrow</span>(flights2), <span class="at">size =</span> n_uebung)</span>
+<span id="cb9-76"><a href="#cb9-76" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-77"><a href="#cb9-77" aria-hidden="true" tabindex="-1"></a>uebung_df <span class="ot">&lt;-</span> <span class="fu">filter</span>(flights2, <span class="fu">row_number</span>() <span class="sc">%in%</span> uebung_index)</span>
+<span id="cb9-78"><a href="#cb9-78" aria-hidden="true" tabindex="-1"></a>test_df <span class="ot">&lt;-</span> <span class="fu">filter</span>(flights2, <span class="sc">!</span>(<span class="fu">row_number</span>() <span class="sc">%in%</span> uebung_index))</span>
+<span id="cb9-79"><a href="#cb9-79" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-80"><a href="#cb9-80" aria-hidden="true" tabindex="-1"></a>lm_fit1 <span class="ot">&lt;-</span> <span class="fu">train</span>(arr_delay <span class="sc">~</span> .,</span>
+<span id="cb9-81"><a href="#cb9-81" aria-hidden="true" tabindex="-1"></a>                 <span class="at">data =</span> uebung_df,</span>
+<span id="cb9-82"><a href="#cb9-82" aria-hidden="true" tabindex="-1"></a>                 <span class="at">method =</span> <span class="st">"lm"</span>,</span>
+<span id="cb9-83"><a href="#cb9-83" aria-hidden="true" tabindex="-1"></a>                 <span class="at">trControl =</span> my_crossval)</span>
+<span id="cb9-84"><a href="#cb9-84" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-85"><a href="#cb9-85" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(lm_fit1)</span>
+<span id="cb9-86"><a href="#cb9-86" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb9-87"><a href="#cb9-87" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-88"><a href="#cb9-88" aria-hidden="true" tabindex="-1"></a>Im Folgenden untersucht sie die prädiktive Güte am Testdatensatz.</span>
-<span id="cb9-89"><a href="#cb9-89" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-92"><a href="#cb9-92" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb9-93"><a href="#cb9-93" aria-hidden="true" tabindex="-1"></a>lm1_pred <span class="ot">&lt;-</span> <span class="fu">predict</span>(lm_fit1, <span class="at">newdata =</span> test_df)</span>
-<span id="cb9-94"><a href="#cb9-94" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-95"><a href="#cb9-95" aria-hidden="true" tabindex="-1"></a>lm1_pred_fit <span class="ot">&lt;-</span> <span class="fu">postResample</span>(<span class="at">pred =</span> lm1_pred, <span class="at">obs =</span> test_df<span class="sc">$</span>arr_delay)</span>
-<span id="cb9-96"><a href="#cb9-96" aria-hidden="true" tabindex="-1"></a>lm1_pred_fit</span>
-<span id="cb9-97"><a href="#cb9-97" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb9-98"><a href="#cb9-98" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-99"><a href="#cb9-99" aria-hidden="true" tabindex="-1"></a>Schließlich berechnet sie noch ein Random-Forest-Modell. Um Zeit zu sparen, verringert sie den Datensatz in dieser ersten Analyse.</span>
-<span id="cb9-100"><a href="#cb9-100" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-101"><a href="#cb9-101" aria-hidden="true" tabindex="-1"></a><span class="in">```{r cache = TRUE}</span></span>
-<span id="cb9-102"><a href="#cb9-102" aria-hidden="true" tabindex="-1"></a>rf_grid <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb9-103"><a href="#cb9-103" aria-hidden="true" tabindex="-1"></a>  <span class="at">.mtry =</span> <span class="fu">c</span>(<span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">7</span>),</span>
-<span id="cb9-104"><a href="#cb9-104" aria-hidden="true" tabindex="-1"></a>  <span class="at">.splitrule =</span> <span class="st">"variance"</span>,</span>
-<span id="cb9-105"><a href="#cb9-105" aria-hidden="true" tabindex="-1"></a>  <span class="at">.min.node.size =</span> <span class="dv">5</span>)</span>
-<span id="cb9-106"><a href="#cb9-106" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-107"><a href="#cb9-107" aria-hidden="true" tabindex="-1"></a>uebung_df_small <span class="ot">&lt;-</span> <span class="fu">sample_n</span>(uebung_df, <span class="at">size =</span> <span class="dv">1000</span>)</span>
-<span id="cb9-108"><a href="#cb9-108" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-109"><a href="#cb9-109" aria-hidden="true" tabindex="-1"></a>rf_fit1 <span class="ot">&lt;-</span> <span class="fu">train</span>(arr_delay <span class="sc">~</span> .,</span>
-<span id="cb9-110"><a href="#cb9-110" aria-hidden="true" tabindex="-1"></a>                 <span class="at">data =</span> uebung_df_small,</span>
-<span id="cb9-111"><a href="#cb9-111" aria-hidden="true" tabindex="-1"></a>                 <span class="at">method =</span> <span class="st">"ranger"</span>,</span>
-<span id="cb9-112"><a href="#cb9-112" aria-hidden="true" tabindex="-1"></a>                 <span class="at">trControl =</span> my_crossval)</span>
-<span id="cb9-113"><a href="#cb9-113" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb9-114"><a href="#cb9-114" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-88"><a href="#cb9-88" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-89"><a href="#cb9-89" aria-hidden="true" tabindex="-1"></a>Im Folgenden untersucht sie die prädiktive Güte am Testdatensatz.</span>
+<span id="cb9-90"><a href="#cb9-90" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-93"><a href="#cb9-93" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb9-94"><a href="#cb9-94" aria-hidden="true" tabindex="-1"></a>lm1_pred <span class="ot">&lt;-</span> <span class="fu">predict</span>(lm_fit1, <span class="at">newdata =</span> test_df)</span>
+<span id="cb9-95"><a href="#cb9-95" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-96"><a href="#cb9-96" aria-hidden="true" tabindex="-1"></a>lm1_pred_fit <span class="ot">&lt;-</span> <span class="fu">postResample</span>(<span class="at">pred =</span> lm1_pred, <span class="at">obs =</span> test_df<span class="sc">$</span>arr_delay)</span>
+<span id="cb9-97"><a href="#cb9-97" aria-hidden="true" tabindex="-1"></a>lm1_pred_fit</span>
+<span id="cb9-98"><a href="#cb9-98" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb9-99"><a href="#cb9-99" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-100"><a href="#cb9-100" aria-hidden="true" tabindex="-1"></a>Schließlich berechnet sie noch ein Random-Forest-Modell. Um Zeit zu sparen, verringert sie den Datensatz in dieser ersten Analyse.</span>
+<span id="cb9-101"><a href="#cb9-101" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-102"><a href="#cb9-102" aria-hidden="true" tabindex="-1"></a><span class="in">```{r cache = TRUE}</span></span>
+<span id="cb9-103"><a href="#cb9-103" aria-hidden="true" tabindex="-1"></a>rf_grid <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb9-104"><a href="#cb9-104" aria-hidden="true" tabindex="-1"></a>  <span class="at">.mtry =</span> <span class="fu">c</span>(<span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">7</span>),</span>
+<span id="cb9-105"><a href="#cb9-105" aria-hidden="true" tabindex="-1"></a>  <span class="at">.splitrule =</span> <span class="st">"variance"</span>,</span>
+<span id="cb9-106"><a href="#cb9-106" aria-hidden="true" tabindex="-1"></a>  <span class="at">.min.node.size =</span> <span class="dv">5</span>)</span>
+<span id="cb9-107"><a href="#cb9-107" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-108"><a href="#cb9-108" aria-hidden="true" tabindex="-1"></a>uebung_df_small <span class="ot">&lt;-</span> <span class="fu">sample_n</span>(uebung_df, <span class="at">size =</span> <span class="dv">1000</span>)</span>
+<span id="cb9-109"><a href="#cb9-109" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-110"><a href="#cb9-110" aria-hidden="true" tabindex="-1"></a>rf_fit1 <span class="ot">&lt;-</span> <span class="fu">train</span>(arr_delay <span class="sc">~</span> .,</span>
+<span id="cb9-111"><a href="#cb9-111" aria-hidden="true" tabindex="-1"></a>                 <span class="at">data =</span> uebung_df_small,</span>
+<span id="cb9-112"><a href="#cb9-112" aria-hidden="true" tabindex="-1"></a>                 <span class="at">method =</span> <span class="st">"ranger"</span>,</span>
+<span id="cb9-113"><a href="#cb9-113" aria-hidden="true" tabindex="-1"></a>                 <span class="at">trControl =</span> my_crossval)</span>
+<span id="cb9-114"><a href="#cb9-114" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb9-115"><a href="#cb9-115" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-116"><a href="#cb9-116" aria-hidden="true" tabindex="-1"></a>Auch hier lässt sie sich wieder die Gütekoeffizienten ausgeben.</span>
-<span id="cb9-117"><a href="#cb9-117" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-120"><a href="#cb9-120" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb9-121"><a href="#cb9-121" aria-hidden="true" tabindex="-1"></a>rf1_pred <span class="ot">&lt;-</span> <span class="fu">predict</span>(rf_fit1, <span class="at">newdata =</span> test_df)</span>
-<span id="cb9-122"><a href="#cb9-122" aria-hidden="true" tabindex="-1"></a>rf1_pred_fit <span class="ot">&lt;-</span> <span class="fu">postResample</span>(<span class="at">pred =</span> rf1_pred, <span class="at">obs =</span> test_df<span class="sc">$</span>arr_delay)</span>
-<span id="cb9-123"><a href="#cb9-123" aria-hidden="true" tabindex="-1"></a>rf1_pred_fit</span>
-<span id="cb9-124"><a href="#cb9-124" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb9-125"><a href="#cb9-125" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-116"><a href="#cb9-116" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-117"><a href="#cb9-117" aria-hidden="true" tabindex="-1"></a>Auch hier lässt sie sich wieder die Gütekoeffizienten ausgeben.</span>
+<span id="cb9-118"><a href="#cb9-118" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-121"><a href="#cb9-121" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb9-122"><a href="#cb9-122" aria-hidden="true" tabindex="-1"></a>rf1_pred <span class="ot">&lt;-</span> <span class="fu">predict</span>(rf_fit1, <span class="at">newdata =</span> test_df)</span>
+<span id="cb9-123"><a href="#cb9-123" aria-hidden="true" tabindex="-1"></a>rf1_pred_fit <span class="ot">&lt;-</span> <span class="fu">postResample</span>(<span class="at">pred =</span> rf1_pred, <span class="at">obs =</span> test_df<span class="sc">$</span>arr_delay)</span>
+<span id="cb9-124"><a href="#cb9-124" aria-hidden="true" tabindex="-1"></a>rf1_pred_fit</span>
+<span id="cb9-125"><a href="#cb9-125" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb9-126"><a href="#cb9-126" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-127"><a href="#cb9-127" aria-hidden="true" tabindex="-1"></a><span class="in">```{r questions, include = FALSE}</span></span>
-<span id="cb9-128"><a href="#cb9-128" aria-hidden="true" tabindex="-1"></a>predictors <span class="ot">&lt;-</span> <span class="fu">names</span>(flights2)[<span class="fu">names</span>(flights) <span class="sc">!=</span> <span class="st">"arr_delay"</span>]</span>
-<span id="cb9-129"><a href="#cb9-129" aria-hidden="true" tabindex="-1"></a>col <span class="ot">&lt;-</span> <span class="fu">sample</span>(predictors, <span class="dv">1</span>)</span>
-<span id="cb9-130"><a href="#cb9-130" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb9-131"><a href="#cb9-131" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-127"><a href="#cb9-127" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-128"><a href="#cb9-128" aria-hidden="true" tabindex="-1"></a><span class="in">```{r questions, include = FALSE}</span></span>
+<span id="cb9-129"><a href="#cb9-129" aria-hidden="true" tabindex="-1"></a>predictors <span class="ot">&lt;-</span> <span class="fu">names</span>(flights2)[<span class="fu">names</span>(flights) <span class="sc">!=</span> <span class="st">"arr_delay"</span>]</span>
+<span id="cb9-130"><a href="#cb9-130" aria-hidden="true" tabindex="-1"></a>col <span class="ot">&lt;-</span> <span class="fu">sample</span>(predictors, <span class="dv">1</span>)</span>
+<span id="cb9-131"><a href="#cb9-131" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb9-132"><a href="#cb9-132" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-133"><a href="#cb9-133" aria-hidden="true" tabindex="-1"></a>a) Interpretieren Sie die Koeffizienten des Prädiktors <span class="in">`r col`</span> des Modells <span class="in">`lm1`</span> (s. Spalten <span class="in">`Estimate`</span> bis <span class="in">`Pr(&gt;|t|)`</span>)!</span>
-<span id="cb9-134"><a href="#cb9-134" aria-hidden="true" tabindex="-1"></a>b) Welcher Prädiktor des Modells <span class="in">`lm1`</span> ist am wichtigsten? Begründen Sie Ihre Antwort!</span>
-<span id="cb9-135"><a href="#cb9-135" aria-hidden="true" tabindex="-1"></a>c) Interpretieren Sie die Ausgabe des Objekts <span class="in">`lm1_pred_fit`</span>!</span>
-<span id="cb9-136"><a href="#cb9-136" aria-hidden="true" tabindex="-1"></a>d) Welche Gefahren bzw. Probleme können damit verbunden sein, dass die Analystin die Stichprobe auf $n=1000$ verkleinert?</span>
-<span id="cb9-137"><a href="#cb9-137" aria-hidden="true" tabindex="-1"></a>e) Vergleichen Sie die Gütekoeffizienten der beiden Modelle im Test-Datensatz!</span>
-<span id="cb9-138"><a href="#cb9-138" aria-hidden="true" tabindex="-1"></a>f) Diskutieren Sie einen (möglichen) Grund für die Unterschiede in den Gütekriterien zwischen den beiden Modellen!</span>
-<span id="cb9-139"><a href="#cb9-139" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-133"><a href="#cb9-133" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-134"><a href="#cb9-134" aria-hidden="true" tabindex="-1"></a>a) Interpretieren Sie die Koeffizienten des Prädiktors <span class="in">`r col`</span> des Modells <span class="in">`lm1`</span> (s. Spalten <span class="in">`Estimate`</span> bis <span class="in">`Pr(&gt;|t|)`</span>)!</span>
+<span id="cb9-135"><a href="#cb9-135" aria-hidden="true" tabindex="-1"></a>b) Welcher Prädiktor des Modells <span class="in">`lm1`</span> ist am wichtigsten? Begründen Sie Ihre Antwort!</span>
+<span id="cb9-136"><a href="#cb9-136" aria-hidden="true" tabindex="-1"></a>c) Interpretieren Sie die Ausgabe des Objekts <span class="in">`lm1_pred_fit`</span>!</span>
+<span id="cb9-137"><a href="#cb9-137" aria-hidden="true" tabindex="-1"></a>d) Welche Gefahren bzw. Probleme können damit verbunden sein, dass die Analystin die Stichprobe auf $n=1000$ verkleinert?</span>
+<span id="cb9-138"><a href="#cb9-138" aria-hidden="true" tabindex="-1"></a>e) Vergleichen Sie die Gütekoeffizienten der beiden Modelle im Test-Datensatz!</span>
+<span id="cb9-139"><a href="#cb9-139" aria-hidden="true" tabindex="-1"></a>f) Diskutieren Sie einen (möglichen) Grund für die Unterschiede in den Gütekriterien zwischen den beiden Modellen!</span>
 <span id="cb9-140"><a href="#cb9-140" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb9-141"><a href="#cb9-141" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb9-142"><a href="#cb9-142" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb9-143"><a href="#cb9-143" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-144"><a href="#cb9-144" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">br</span><span class="dt">&gt;</span></span>
+<span id="cb9-144"><a href="#cb9-144" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb9-145"><a href="#cb9-145" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">br</span><span class="dt">&gt;</span></span>
 <span id="cb9-146"><a href="#cb9-146" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">br</span><span class="dt">&gt;</span></span>
 <span id="cb9-147"><a href="#cb9-147" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">br</span><span class="dt">&gt;</span></span>
@@ -985,63 +985,64 @@ F-statistic:  4675 on 10 and 261866 DF,  p-value: &lt; 2.2e-16</code></pre>
 <span id="cb9-151"><a href="#cb9-151" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">br</span><span class="dt">&gt;</span></span>
 <span id="cb9-152"><a href="#cb9-152" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">br</span><span class="dt">&gt;</span></span>
 <span id="cb9-153"><a href="#cb9-153" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">br</span><span class="dt">&gt;</span></span>
-<span id="cb9-154"><a href="#cb9-154" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-155"><a href="#cb9-155" aria-hidden="true" tabindex="-1"></a><span class="fu"># Lösung</span></span>
-<span id="cb9-156"><a href="#cb9-156" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-157"><a href="#cb9-157" aria-hidden="true" tabindex="-1"></a>**Interpretieren Sie die Koeffizienten des Prädiktors `r col` des Modells `lm1`!**</span>
-<span id="cb9-158"><a href="#cb9-158" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-159"><a href="#cb9-159" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Estimate: Punktschätzer des Einflussgewichts</span>
-<span id="cb9-160"><a href="#cb9-160" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Std. Err: Standardfehler, ein Koeffizient zur Beurteilung der (Un-)Genauigkeit des Punktschätzers</span>
-<span id="cb9-161"><a href="#cb9-161" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>t value: Estimate geteilt durch Std. Error, Signal-Noise-Ratio, z-Wert</span>
-<span id="cb9-162"><a href="#cb9-162" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Pr: p-Wert</span>
-<span id="cb9-163"><a href="#cb9-163" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-164"><a href="#cb9-164" aria-hidden="true" tabindex="-1"></a>**Welcher Prädiktor des Modells `lm1` ist am wichtigsten? Begründen Sie Ihre Antwort!**</span>
-<span id="cb9-165"><a href="#cb9-165" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-166"><a href="#cb9-166" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Eine Möglichkeit zur Bestimmung der Prädiktorenrelevanz besteht darin, den Prädiktor mit höchstem Absolutwert in der Spalte <span class="in">`t value`</span> heranzuziehen. </span>
-<span id="cb9-167"><a href="#cb9-167" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>In diesem Fall ist das <span class="in">`dep_time`</span>.</span>
-<span id="cb9-168"><a href="#cb9-168" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-169"><a href="#cb9-169" aria-hidden="true" tabindex="-1"></a>**Interpretieren Sie die Ausgabe des Objekts `lm1_pred_fit`!**</span>
-<span id="cb9-170"><a href="#cb9-170" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-171"><a href="#cb9-171" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Es werden drei Gütekriterien berichtet: R-Quadrat, MSE und MAE. MSE gibt den mittleren Quadratfehler der vorhersage an; MAE den mittleren Absolutfehler.</span>
-<span id="cb9-172"><a href="#cb9-172" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Je höher $R^2$ und je geringer MAE bzw. MSE sind, desto besser ist das Modell.</span>
-<span id="cb9-173"><a href="#cb9-173" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-154"><a href="#cb9-154" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">br</span><span class="dt">&gt;</span></span>
+<span id="cb9-155"><a href="#cb9-155" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-156"><a href="#cb9-156" aria-hidden="true" tabindex="-1"></a><span class="fu"># Lösung</span></span>
+<span id="cb9-157"><a href="#cb9-157" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-158"><a href="#cb9-158" aria-hidden="true" tabindex="-1"></a>**Interpretieren Sie die Koeffizienten des Prädiktors `r col` des Modells `lm1`!**</span>
+<span id="cb9-159"><a href="#cb9-159" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-160"><a href="#cb9-160" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Estimate: Punktschätzer des Einflussgewichts</span>
+<span id="cb9-161"><a href="#cb9-161" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Std. Err: Standardfehler, ein Koeffizient zur Beurteilung der (Un-)Genauigkeit des Punktschätzers</span>
+<span id="cb9-162"><a href="#cb9-162" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>t value: Estimate geteilt durch Std. Error, Signal-Noise-Ratio, z-Wert</span>
+<span id="cb9-163"><a href="#cb9-163" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Pr: p-Wert</span>
+<span id="cb9-164"><a href="#cb9-164" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-165"><a href="#cb9-165" aria-hidden="true" tabindex="-1"></a>**Welcher Prädiktor des Modells `lm1` ist am wichtigsten? Begründen Sie Ihre Antwort!**</span>
+<span id="cb9-166"><a href="#cb9-166" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-167"><a href="#cb9-167" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Eine Möglichkeit zur Bestimmung der Prädiktorenrelevanz besteht darin, den Prädiktor mit höchstem Absolutwert in der Spalte <span class="in">`t value`</span> heranzuziehen. </span>
+<span id="cb9-168"><a href="#cb9-168" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>In diesem Fall ist das <span class="in">`dep_time`</span>.</span>
+<span id="cb9-169"><a href="#cb9-169" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-170"><a href="#cb9-170" aria-hidden="true" tabindex="-1"></a>**Interpretieren Sie die Ausgabe des Objekts `lm1_pred_fit`!**</span>
+<span id="cb9-171"><a href="#cb9-171" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-172"><a href="#cb9-172" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Es werden drei Gütekriterien berichtet: R-Quadrat, MSE und MAE. MSE gibt den mittleren Quadratfehler der vorhersage an; MAE den mittleren Absolutfehler.</span>
+<span id="cb9-173"><a href="#cb9-173" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Je höher $R^2$ und je geringer MAE bzw. MSE sind, desto besser ist das Modell.</span>
 <span id="cb9-174"><a href="#cb9-174" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-175"><a href="#cb9-175" aria-hidden="true" tabindex="-1"></a>**Welche Gefahren bzw. Probleme können damit verbunden sein, dass die Analystin die Stichprobe auf $n=1000$ verkleinert?**</span>
-<span id="cb9-176"><a href="#cb9-176" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-177"><a href="#cb9-177" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Kleinere Stichproben schätzen die Population ungenauer.</span>
-<span id="cb9-178"><a href="#cb9-178" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Durch die Stichprobenziehung könnten sich die Verteilungen verändern, was wiederum einen Einfluss auf die Vorhersagen haben kann.</span>
-<span id="cb9-179"><a href="#cb9-179" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-180"><a href="#cb9-180" aria-hidden="true" tabindex="-1"></a>**Vergleichen Sie die Gütekoeffizienten der beiden Modelle im Test-Datensatz!**</span>
-<span id="cb9-181"><a href="#cb9-181" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-182"><a href="#cb9-182" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Das Random-Forest-Modell hat deutlich besser abgeschnitten als das lineare Modell.</span>
-<span id="cb9-183"><a href="#cb9-183" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-175"><a href="#cb9-175" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-176"><a href="#cb9-176" aria-hidden="true" tabindex="-1"></a>**Welche Gefahren bzw. Probleme können damit verbunden sein, dass die Analystin die Stichprobe auf $n=1000$ verkleinert?**</span>
+<span id="cb9-177"><a href="#cb9-177" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-178"><a href="#cb9-178" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Kleinere Stichproben schätzen die Population ungenauer.</span>
+<span id="cb9-179"><a href="#cb9-179" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Durch die Stichprobenziehung könnten sich die Verteilungen verändern, was wiederum einen Einfluss auf die Vorhersagen haben kann.</span>
+<span id="cb9-180"><a href="#cb9-180" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-181"><a href="#cb9-181" aria-hidden="true" tabindex="-1"></a>**Vergleichen Sie die Gütekoeffizienten der beiden Modelle im Test-Datensatz!**</span>
+<span id="cb9-182"><a href="#cb9-182" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-183"><a href="#cb9-183" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Das Random-Forest-Modell hat deutlich besser abgeschnitten als das lineare Modell.</span>
 <span id="cb9-184"><a href="#cb9-184" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-185"><a href="#cb9-185" aria-hidden="true" tabindex="-1"></a>**Diskutieren Sie einen (möglichen) Grund für die Unterschiede in den Gütekriterien zwischen den beiden Modellen!**</span>
-<span id="cb9-186"><a href="#cb9-186" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-187"><a href="#cb9-187" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Ein lineares Modell wird dort gute Vorhersagen leisten, wo seine Voraussetzungen erfüllt sind. Eine wichtige Vorausssetzung sind lineare Beziehungen der Prädiktoren zum Kriterium. </span>
-<span id="cb9-188"><a href="#cb9-188" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Hier könnte der Fall vorliegen, dass die Beziehungen nicht linear sind, so dass ein Modell - wie das Random-Forest-Modell - das nicht auf lineare Beziehungen abzielt, bessere Vorhersagen treffen kann.</span>
-<span id="cb9-189"><a href="#cb9-189" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-185"><a href="#cb9-185" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-186"><a href="#cb9-186" aria-hidden="true" tabindex="-1"></a>**Diskutieren Sie einen (möglichen) Grund für die Unterschiede in den Gütekriterien zwischen den beiden Modellen!**</span>
+<span id="cb9-187"><a href="#cb9-187" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-188"><a href="#cb9-188" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Ein lineares Modell wird dort gute Vorhersagen leisten, wo seine Voraussetzungen erfüllt sind. Eine wichtige Vorausssetzung sind lineare Beziehungen der Prädiktoren zum Kriterium. </span>
+<span id="cb9-189"><a href="#cb9-189" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Hier könnte der Fall vorliegen, dass die Beziehungen nicht linear sind, so dass ein Modell - wie das Random-Forest-Modell - das nicht auf lineare Beziehungen abzielt, bessere Vorhersagen treffen kann.</span>
 <span id="cb9-190"><a href="#cb9-190" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb9-191"><a href="#cb9-191" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb9-192"><a href="#cb9-192" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb9-193"><a href="#cb9-193" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-196"><a href="#cb9-196" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb9-197"><a href="#cb9-197" aria-hidden="true" tabindex="-1"></a>sol <span class="ot">&lt;-</span> <span class="st">"s. text"</span></span>
-<span id="cb9-198"><a href="#cb9-198" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb9-199"><a href="#cb9-199" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-194"><a href="#cb9-194" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-197"><a href="#cb9-197" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb9-198"><a href="#cb9-198" aria-hidden="true" tabindex="-1"></a>sol <span class="ot">&lt;-</span> <span class="st">"s. text"</span></span>
+<span id="cb9-199"><a href="#cb9-199" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb9-200"><a href="#cb9-200" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb9-201"><a href="#cb9-201" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb9-202"><a href="#cb9-202" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb9-203"><a href="#cb9-203" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb9-204"><a href="#cb9-204" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-205"><a href="#cb9-205" aria-hidden="true" tabindex="-1"></a>---</span>
-<span id="cb9-206"><a href="#cb9-206" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-207"><a href="#cb9-207" aria-hidden="true" tabindex="-1"></a>Categories: </span>
-<span id="cb9-208"><a href="#cb9-208" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-209"><a href="#cb9-209" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>ds1</span>
-<span id="cb9-210"><a href="#cb9-210" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>tidymodels</span>
-<span id="cb9-211"><a href="#cb9-211" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>statlearning</span>
-<span id="cb9-212"><a href="#cb9-212" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>string</span>
+<span id="cb9-205"><a href="#cb9-205" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-206"><a href="#cb9-206" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb9-207"><a href="#cb9-207" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-208"><a href="#cb9-208" aria-hidden="true" tabindex="-1"></a>Categories: </span>
+<span id="cb9-209"><a href="#cb9-209" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-210"><a href="#cb9-210" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>ds1</span>
+<span id="cb9-211"><a href="#cb9-211" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>tidymodels</span>
+<span id="cb9-212"><a href="#cb9-212" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>statlearning</span>
+<span id="cb9-213"><a href="#cb9-213" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>string</span>
 </code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
